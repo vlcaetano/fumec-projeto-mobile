@@ -1,0 +1,7 @@
+{
+  "name": "royal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
