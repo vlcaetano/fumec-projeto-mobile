@@ -1,9 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content>
+  <form>
+    <img src="../../assets/images/coroa.svg" alt="Logo da Royal">
+
+    <fieldset>
+      <legend>Faça login para acessar o app</legend>
+
+      <div class="input-block">
+        <label for="nomeUsuario">Nome de usuário</label>
+        <input 
+          type="text" 
+          id="nomeUsuario"
+          name="nomeUsuario"
+        >
+      </div>
+  
+      <div class="input-block">
+        <label for="senha">Senha</label>
+        <input 
+          type="password" 
+          id="senha"
+          name="senha"
+        >
+      </div>
+  
+      <div class="buttons-login">
+        <a routerLink="/tabs/tab1">Iniciar sessão</a>
+        <a routerLink="/cadastro">Cadastre-se</a>
+      </div>
+    </fieldset>
+  
+  </form>
 
 </ion-content>
+
