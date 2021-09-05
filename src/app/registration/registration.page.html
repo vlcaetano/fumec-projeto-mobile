@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+  <ion-header style="--ion-background-color: var(--ion-color-primary)">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button color="light" defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title color="light">Cadastro</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <fieldset>
+      <div class="input-block">
+        <label for="nomeCompleto">Nome completo</label>
+        <input 
+          type="text" 
+          id="nomeCompleto" 
+          name="nomeCompleto" 
+        >
+      </div>
+  
+      <div class="input-block">
+        <label for="nomeUsuario">Nome de usuário</label>
+        <input 
+          type="text" 
+          id="nomeUsuario"
+          name="nomeUsuario"
+        >
+      </div>
+  
+      <div class="input-block">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email"
+          name="email"
+        >
+      </div>
+  
+      <div class="input-block">
+        <label for="senha">Senha</label>
+        <input 
+          type="password" 
+          id="senha"
+          name="senha"
+        >
+      </div>
+  
+      <button type="submit" routerLink="/tabs/tab1">Concluir</button>
+    </fieldset>
+  
+  </form>
+
+</ion-content>
