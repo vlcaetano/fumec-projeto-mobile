@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  slideOpts = {
+    initialSlide: 0,
+    slidesPerView: 1.5,
+    spaceBetween: 5.5
+  }
+
   constructor() {}
 
 }
