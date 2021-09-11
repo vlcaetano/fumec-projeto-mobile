@@ -43,6 +43,8 @@ fieldset {
 
   width: 100%;
   height: 100%;
+
+  color: var(--ion-color-dark);
 }
 
 input {
@@ -94,9 +96,6 @@ button:hover {
   background: var(--ion-color-primary-shade);
 }
 
-// .horizontal-line {
-//   height: 1px;
-//   width: 100%;
-//   background-color: var(--ion-color-secondary);
-//   margin: 20px auto;
-// }
+ion-header {
+  --ion-background-color: var(--ion-color-primary);
+}
