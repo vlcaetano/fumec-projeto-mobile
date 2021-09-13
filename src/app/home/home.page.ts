@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Game } from '../models/game.model';
+import { GamesService } from '../services/games.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +9,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  slideOpts = {
+  public slideOpts = {
     initialSlide: 0,
     slidesPerView: 1.5,
     spaceBetween: 5.5
   }
 
-  constructor() {}
+  public featuredGames: Game[]
+  public bestSellerGames: Game[]
 
+  constructor(private gamesService: GamesService) {
+    this.featuredGames = this.gamesService.getFeaturedGames()
+    this.bestSellerGames = this.gamesService.getBestSellerGames()
+  }
 }

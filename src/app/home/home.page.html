@@ -2,82 +2,32 @@
   
   <h1>Destaques</h1>
   <ion-slides [options]="slideOpts">
-    <ion-slide>
+    <ion-slide *ngFor="let game of featuredGames">
       <div class="jogo">
-        <a class="link-jogo">
-          <img src="../../assets/images/games/portrait/borderlands3.png" />
+        <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
+          <img src={{game.imgPortrait}} />
           <div class="jogo-nome">
-            <h4>Borderlands 3</h4>
-            <h5>R$99,90</h5>
+            <h4>{{game.name}}</h4>
+            <h5>{{game.price | currency:'BRL'}}</h5>
           </div>
         </a>
       </div>
     </ion-slide>
-
-    <ion-slide>
-      <div class="jogo">
-        <a class="link-jogo">
-          <img src="../../assets/images/games/portrait/cod.png" />
-          <div class="jogo-nome">
-            <h4>Call of Duty: Black Ops Cold War</h4>
-            <h5>R$99,90</h5>
-          </div>
-        </a>
-      </div>
-    </ion-slide>
-
-    <ion-slide>
-      <div class="jogo">
-        <a class="link-jogo">
-          <img src="../../assets/images/games/portrait/avengers.png" />
-          <div class="jogo-nome">
-            <h4>Marvel's Avengers</h4>
-            <h5>R$99,90</h5>
-          </div>
-        </a>
-      </div>
-    </ion-slide>
-
   </ion-slides>
 
   <h1>Mais vendidos</h1>
   <ion-slides [options]="slideOpts">
-    <ion-slide>
+    <ion-slide *ngFor="let game of bestSellerGames">
       <div class="jogo">
-        <a class="link-jogo">
-          <img src="../../assets/images/games/portrait/hades.png" />
+        <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
+          <img src={{game.imgPortrait}} />
           <div class="jogo-nome">
-            <h4>Hades</h4>
-            <h5>R$99,90</h5>
+            <h4>{{game.name}}</h4>
+            <h5>{{game.price | currency:'BRL'}}</h5>
           </div>
         </a>
       </div>
     </ion-slide>
-
-    <ion-slide>
-      <div class="jogo">
-        <a class="link-jogo">
-          <img src="../../assets/images/games/portrait/mafiade.png" />
-          <div class="jogo-nome">
-            <h4>Mafia: Definitive Edition</h4>
-            <h5>R$99,90</h5>
-          </div>
-        </a>
-      </div>
-    </ion-slide>
-
-    <ion-slide>
-      <div class="jogo">
-        <a class="link-jogo">
-          <img src="../../assets/images/games/portrait/re2.png" />
-          <div class="jogo-nome">
-            <h4>Resident Evil 2</h4>
-            <h5>R$99,90</h5>
-          </div>
-        </a>
-      </div>
-    </ion-slide>
-
   </ion-slides>
 
 </ion-content>

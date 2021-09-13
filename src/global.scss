@@ -58,6 +58,10 @@ h1 {
   color: var(--ion-color-dark);
 }
 
+a {
+  text-decoration: none;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;
