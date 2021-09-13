@@ -1,13 +1,143 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+.jogo {
+  display: flex;
+  flex-direction: column;
+  vertical-align: top; /* caso a imagem não carregue, alinha pelo topo e não pelo baseline */
+  font-family: 'Poppins', sans-serif;
+  height: 410px;
+  width: 256px;
+  margin: 5px 8px;
+  padding: 5px;
+}
+
+.jogo img {
+  width: 237px;
+  height: 316px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.jogo-nome {
+  padding: 0 5px;
+  height: 90px;
+  overflow: hidden; /* o que é sobreposto é escondido */
+  text-align: left;
+}
+
+.jogo-nome h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0px;
+  color: var(--ion-color-dark-tint);
+}
+
+.jogo-nome h5 {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0px;
+  margin-top: 5px;
+  color: var(--ion-color-dark-tint);
+}
+
+.flex-container-jogos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  margin: 10px;
+  margin-left: 30px;
+
+  color: var(--ion-color-dark);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-container img {
+  margin: 0;
+}
+
+.flex-container h1 {
+  font-family: 'Archivo', sans-serif;
+  font-size: 32px;
+  margin: 10px;
+}
+
+button {
+  border: none;
+
+  width: 150px;
+  height: 40px;
+
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: var(--ion-color-light);
+
+  transition: background 0.2s; /* transição para o hover */
+  background: var(--ion-color-primary);
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--ion-color-tertiary);
+}
+
+form {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1.1em;
+}
+
+label {
+  font-family: 'Poppins', sans-serif;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+input[type=text], 
+input[type=number],
+input[type=password],
+textarea {
+  border: none;
+  width: 100%;
+
+  padding-left: 10px;
+  border-radius: 10px;
+  height: 50px;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #fff;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.erro{
+    font-size: medium;
+    color: red;
+}
 
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";

@@ -1,0 +1,53 @@
+.imagem-jogo img {
+  width: 90%;
+  height: 90%;
+
+  margin-top: 15px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.imagem-jogo {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+p, .texto {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3em;
+  width: 90%;
+  margin: 15px auto;
+
+  color: var(--ion-color-dark);
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--ion-color-dark);
+}
+
+.botoes a {
+  width: 150px;
+  height: 40px;
+
+  border-radius: 5px;
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-family: 'Archivo', sans-serif;
+  color: var(--ion-color-light);
+
+  transition: background 0.2s; /* transição para o hover */
+  background: var(--ion-color-primary);
+}
+
+.botoes a:hover{
+  background: var(--ion-color-primary-shade);
+}
