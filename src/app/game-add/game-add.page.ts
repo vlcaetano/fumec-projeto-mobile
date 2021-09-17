@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
-import { HomePage } from '../home/home.page';
 
 import { Game } from '../models/game.model';
 import { GamesService } from '../services/games.service';
