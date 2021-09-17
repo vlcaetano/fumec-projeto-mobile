@@ -1,4 +1,5 @@
 import { Component, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Game } from '../models/game.model';
 import { GamesService } from '../services/games.service';
@@ -19,10 +20,17 @@ export class HomePage {
   public featuredGames: Game[]
   public bestSellerGames: Game[]
 
-  constructor(private gamesService: GamesService) { }
+  constructor(private gamesService: GamesService, private router: Router) { }
 
   ionViewWillEnter() {
     this.featuredGames = this.gamesService.getFeaturedGames()
     this.bestSellerGames = this.gamesService.getBestSellerGames()
+  }
+
+  public navigate() {
+    // navegar para a página de cadastro apagando o state atual
+    this.router.navigateByUrl('/cadastrar-jogo',{
+      replaceUrl : true
+    });
   }
 }
