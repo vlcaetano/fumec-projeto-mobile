@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'cadastrar-jogo',
     loadChildren: () => import('./game-add/game-add.module').then( m => m.GameAddPageModule)
+  },
+  {
+    path: 'editar-jogo/:id',
+    loadChildren: () => import('./game-update/game-update.module').then( m => m.GameUpdatePageModule)
   }
 ];
 @NgModule({

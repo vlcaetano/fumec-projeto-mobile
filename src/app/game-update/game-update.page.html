@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button color="black" defaultHref="/tabs/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Editar Jogo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <fieldset>
+      <div class="input-block">
+      <label position="floating">Nome</label>
+      <input type="text" name="name" [(ngModel)] = "game.name">
+      </div>
+
+      <div class="input-block">
+      <label position="floating">Preço</label>
+      <input type="text" name="price" [(ngModel)] = "game.price">
+    </div>
+
+    <div class="input-block">
+      <label position="stacked">Descrição</label>
+      <textarea name="description" [(ngModel)] = "game.description" ></textarea>
+    </div>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-button (click)="update()" expand="block" color="success">
+         Salvar
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-button routerLink="/detalhes/{{game.id}}"  expand="block" color="primary">
+          Cancelar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </fieldset>
+  </form>
+</ion-content>
+

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button color="light" defaultHref="/"></ion-back-button>
+      <ion-back-button color="light" defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
     <ion-title>{{game.name}}</ion-title>
   </ion-toolbar>
@@ -20,5 +20,18 @@
     <div class="botoes">
       <a (click)="comprar()">Comprar</a>
     </div>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-button routerLink="/editar-jogo/{{game.id}}" expand="block" color="light">
+          Editar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="deletar()" expand="block" color="primary">
+          Deletar
+        </ion-button>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>

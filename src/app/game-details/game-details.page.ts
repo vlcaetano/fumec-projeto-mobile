@@ -27,4 +27,13 @@ export class GameDetailsPage implements OnInit {
   public comprar() {
     this.router.navigateByUrl('/tabs/home')
   }
+
+  public deletar() {
+    if(this.game.id || this.game.id === 0){
+      this.gamesService.deleteGame(this.game.id);
+    }
+    this.router.navigateByUrl('/tabs/home', {
+      replaceUrl : true
+    })
+  }
 }
