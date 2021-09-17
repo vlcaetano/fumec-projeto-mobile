@@ -221,4 +221,55 @@ export class GamesService {
   public getTrendingGames(): Game[] {
     return this.games.filter(game => game.trending)
   }
+
+  public addGame(game: Game){
+    game.id = this.getRandomIntInclusive(1000, 2000);
+    game.imgPortrait = "assets/images/games/portrait/borderlands3.png";
+    game.imgLandscape = "assets/images/games/landscape/borderlands3.png";
+    game.featured = true;
+    game.bestSeller = false;
+    game.trending = false;
+    this.games.push(game);
+  }
+
+  public updateGame(game: Game){
+    if(game.id || game.id === 0){
+
+      for(const obj of this.games){
+        if (obj.id === game.id){
+          obj.name = game.name;
+          obj.price = game.price;
+          obj.description = game.description;
+          obj.imgPortrait = game.imgPortrait;
+          obj.imgLandscape = game.imgLandscape;
+          obj.featured = game.featured
+          obj.bestSeller = game.bestSeller
+          obj.trending = game.trending
+          break;
+        }
+      }   
+    }
+  }
+
+  public deleteGame(id: Number){
+    let posicao = null;
+
+    for(let i = 0; i < this.games.length; i++){
+      if (this.games[i].id === id){
+        posicao = i;
+        break;
+      }
+    }
+
+    if (posicao || posicao === 0){
+      this.games.splice(posicao,1);
+    }
+
+  }
+
+  private getRandomIntInclusive(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }

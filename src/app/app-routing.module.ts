@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'detalhes/:id',
     loadChildren: () => import('./game-details/game-details.module').then( m => m.GameDetailsPageModule)
+  },
+  {
+    path: 'cadastrar-jogo',
+    loadChildren: () => import('./game-add/game-add.module').then( m => m.GameAddPageModule)
   }
 ];
 @NgModule({

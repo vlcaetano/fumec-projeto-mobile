@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+
 import { Game } from '../models/game.model';
 import { GamesService } from '../services/games.service';
 
@@ -18,7 +19,9 @@ export class HomePage {
   public featuredGames: Game[]
   public bestSellerGames: Game[]
 
-  constructor(private gamesService: GamesService) {
+  constructor(private gamesService: GamesService) { }
+
+  ionViewWillEnter() {
     this.featuredGames = this.gamesService.getFeaturedGames()
     this.bestSellerGames = this.gamesService.getBestSellerGames()
   }
