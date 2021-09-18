@@ -21,6 +21,14 @@ const routes: Routes = [
   {
     path: 'editar-jogo/:id',
     loadChildren: () => import('./game-update/game-update.module').then( m => m.GameUpdatePageModule)
+  },
+  {
+    path: 'game-list',
+    loadChildren: () => import('./game-list/game-list.module').then( m => m.GameListPageModule)
+  },
+  {
+    path: 'painel',
+    loadChildren: () => import('./panel/panel.module').then( m => m.PanelPageModule)
   }
 ];
 @NgModule({

@@ -1,0 +1,57 @@
+.botoes a,
+.botao-novo a {
+    width: 40px;
+    height: 40px;
+
+    margin-left: 5px;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: .9em;
+    font-family: 'Archivo', sans-serif;
+    color: var(--color-text-light);
+
+    transition: background 0.2s;
+    background: var(--ion-color-primary);
+    cursor: pointer;
+}
+
+.botoes a:hover,
+.botao-novo a:hover{
+    background: var(--ion-color-tertiary);
+}
+
+.botao-novo a{
+    width: 150px;
+    height: 40px;
+
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0px;
+  color: var(--ion-color-dark-tint);
+  display:table-cell;
+}
+
+.item-painel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.botoes-painel {
+  display: flex;
+}

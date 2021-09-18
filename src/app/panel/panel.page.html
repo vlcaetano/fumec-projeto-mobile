@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Painel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="flex-container">
+    <h1>Jogos</h1>
+    <div class="botao-novo">
+      <a routerLink="/cadastrar-jogo">
+        Novo
+      </a>
+    </div>
+    <ion-list>
+      <ion-item *ngFor="let game of games">
+        <div class="item-painel">
+          <h4>{{game.name}}</h4>
+
+          <div class="botoes-painel">
+            <div class="botoes">
+              <a routerLink="/editar-jogo/{{game.id}}"><ion-icon size="small" name="create"></ion-icon></a>
+            </div>
+            <div class="botoes">
+              <a (click)="deleteGame(game.id)"><ion-icon size="small" name="trash"></ion-icon></a>
+            </div>
+          </div>
+
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

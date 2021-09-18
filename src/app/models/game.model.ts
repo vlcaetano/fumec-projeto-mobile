@@ -20,9 +20,9 @@ export class Game {
               bestSeller?: boolean,
               trending?: boolean) {
     this.id = (id)? id : null;
-    this.name = (name)? name : 'Jogo sem nome';
+    this.name = (name)? name : 'Nome';
     this.price = (price)? price : 99.90;
-    this.description = (description)? description : 'Jogo sem descrição';
+    this.description = (description)? description : 'Descrição';
     this.imgPortrait = (imgPortrait)? imgPortrait : '';
     this.imgLandscape = (imgLandscape)? imgLandscape : '';
     this.featured = (featured)? featured : false;
