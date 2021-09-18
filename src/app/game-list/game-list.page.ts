@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../models/game.model';
 import { GamesService } from '../services/games.service';
-import _ from 'lodash';
-import { __values } from 'tslib';
-import { NONE_TYPE } from '@angular/compiler';
 
 @Component({
   selector: 'app-game-list',
@@ -12,31 +9,23 @@ import { NONE_TYPE } from '@angular/compiler';
 })
 
 export class GameListPage implements OnInit{
-  queryText: string;
 
   public games: Game[]
-  constructor(private gamesService: GamesService) { 
-    this.queryText = '';
-    this.ionViewWillEnter()
+  
+  constructor(private gamesService: GamesService) {
     this.games = this.gamesService.getAll()
   }
 
   ngOnInit() {
   }
-  
-  public ionViewWillEnter() {
-    this.games = this.gamesService.getAll()
-  }
 
-  filterGame(jogo: any){
-    let val = jogo.target.value;
-    if (val && val.trim() != ''){
-      this.games = _.values(this.gamesService.getAll());
+  filterGame(event: any){
+    let queryText = event.target.value;
+    this.games = this.gamesService.getAll();
+    if (queryText && queryText.trim() != ''){
       this.games = this.games.filter((game) => {
-        return (game.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (game.name.toLowerCase().indexOf(queryText.toLowerCase()) > -1);
       })
-    } else {
-      this.games = this.gamesService.getAll();
     }
   }
 }

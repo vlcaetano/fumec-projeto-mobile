@@ -1,22 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Lista de Jogos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <div>
-    <ion-searchbar placeholder="Digite o nome de um jogo!" [(ngModel)]="queryText" (ionInput)="filterGame($event)" clearInput>
-      
-    </ion-searchbar>
-  </div>
-  <div>
-    <ion-list>
-      <ion-item no-lines *ngFor="let cidade of cidades">
-        <h3>{{game.name}}</h3>
-      </ion-item>
-    </ion-list>
-    
+    <ion-searchbar placeholder="Buscar" (ionInput)="filterGame($event)" clearInput></ion-searchbar>
   </div>
   <div class="flex-container">
     <ion-list>

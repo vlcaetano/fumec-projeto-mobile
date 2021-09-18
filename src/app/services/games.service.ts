@@ -241,9 +241,6 @@ export class GamesService {
 
   public addGame(game: Game){
     game.id = this.getRandomIntInclusive(1000, 2000);
-    game.featured = true;
-    game.bestSeller = false;
-    game.trending = false;
     this.games.push(game);
   }
 

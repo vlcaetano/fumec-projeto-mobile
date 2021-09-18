@@ -143,6 +143,13 @@ textarea {
     color: red;
 }
 
+.searchbar-input.sc-ion-searchbar-md {
+  background: var(--ion-color-light);
+  color: var(--ion-color-dark);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+}
+
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 
