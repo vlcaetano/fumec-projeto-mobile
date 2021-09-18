@@ -22,7 +22,7 @@ export class GameAddPage implements OnInit {
   public async add(){
     if (this.game.name !== null && this.game.name !== undefined){
       this.gamesService.addGame(this.game);
-      this.route.navigate(['/tabs/home'])
+      this.route.navigate(['/painel'])
     }
   }
 }
