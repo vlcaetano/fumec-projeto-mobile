@@ -13,6 +13,7 @@ export class GamesService {
       price: 119.9,
       imgPortrait: "assets/images/games/portrait/borderlands3.png",
       imgLandscape: "assets/images/games/landscape/borderlands3.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202010/2323/p50N4PBK9rNanGYKFecTvac5.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -24,6 +25,7 @@ export class GamesService {
       price: 99.99,
       imgPortrait: "assets/images/games/portrait/avengers.png",
       imgLandscape: "assets/images/games/landscape/avengers.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/img/rnd/202108/0309/RmnDs8XgzGwMUfneQbkC7huM.png",
       featured: false,
       bestSeller: true,
       trending: false,
@@ -35,6 +37,7 @@ export class GamesService {
       price: 229.9,
       imgPortrait: "assets/images/games/portrait/cod.png",
       imgLandscape: "assets/images/games/landscape/cod.png",
+      imgSquare: "https://vulcan.dl.playstation.net/img/rnd/202104/2720/ZLJ5ybLkLYwLGDz9xfe7LBPi.png",
       featured: false,
       bestSeller: true,
       trending: false,
@@ -46,6 +49,7 @@ export class GamesService {
       price: 75.99,
       imgPortrait: "assets/images/games/portrait/samurai.png",
       imgLandscape: "assets/images/games/landscape/samurai.png",
+      imgSquare: "https://vulcan.dl.playstation.net/ap/rnd/202007/1106/qycF6NNWh51Sz9FNthEqXwW0.png",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -57,6 +61,7 @@ export class GamesService {
       price: 89.99,
       imgPortrait: "assets/images/games/portrait/monster.png",
       imgLandscape: "assets/images/games/landscape/monster.png",
+      imgSquare: "https://games-b26f.kxcdn.com/wp-content/uploads/2019/07/monster-hunter-world-iceborne-1024x1024.jpg",
       featured: false,
       bestSeller: true,
       trending: false,
@@ -68,6 +73,7 @@ export class GamesService {
       price: 20.69,
       imgPortrait: "assets/images/games/portrait/polybridge.png",
       imgLandscape: "assets/images/games/landscape/polybridge.png",
+      imgSquare: "https://tinfoil.media/i/0100EAB00605C000/0/0/fc3dcbd713063dbe887f576f270df7a625bf78c17cf6d53abd13b2fbf62ca974",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -79,6 +85,7 @@ export class GamesService {
       price: 37.99,
       imgPortrait: "assets/images/games/portrait/fallguys.png",
       imgLandscape: "assets/images/games/landscape/fallguys.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/img/rnd/202107/2119/LKoMmjhc0rz2Dao82MLvlpht.png",
       featured: false,
       bestSeller: false,
       trending: true,
@@ -90,6 +97,7 @@ export class GamesService {
       price: 10.89,
       imgPortrait: "assets/images/games/portrait/amongus.png",
       imgLandscape: "assets/images/games/landscape/amongus.png",
+      imgSquare: "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/c2025b041d22a3315d187f5f6c8f46d9.jpg",
       featured: false,
       bestSeller: false,
       trending: true,
@@ -101,6 +109,7 @@ export class GamesService {
       price: 229.9,
       imgPortrait: "assets/images/games/portrait/mafiade.png",
       imgLandscape: "assets/images/games/landscape/mafiade.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202006/1023/35jaBRLW6kV4wfF3bi0nxRIH.png",
       featured: false,
       bestSeller: false,
       trending: true,
@@ -112,6 +121,7 @@ export class GamesService {
       price: 89.99,
       imgPortrait: "assets/images/games/portrait/re2.png",
       imgLandscape: "assets/images/games/landscape/re2.png",
+      imgSquare: "https://image.api.playstation.com/cdn/UP0102/CUSA09193_00/YDXpf9y12EN7AWyRgO9z24F8x72kwH4m.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -123,6 +133,7 @@ export class GamesService {
       price: 47.49,
       imgPortrait: "assets/images/games/portrait/hades.png",
       imgLandscape: "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Hades_image1600w.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -134,6 +145,7 @@ export class GamesService {
       price: 47.49,
       imgPortrait: "https://cdn-products.eneba.com/resized-products/uiAcncxmFfJ3JRqLjaW3EemyTDu1rK1f7QMoflzY6B4_350x200_1x-0.jpg",
       imgLandscape: "https://projectn.com.br/wp-content/uploads/2020/11/7e1518_cff080cbbae743439723d7455d525f82_mv2.jpg",
+      imgSquare: "https://image.api.playstation.com/vulcan/img/rnd/202106/0411/HMFFrDc55LTdqf9sls0eMzK4.png",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -145,6 +157,7 @@ export class GamesService {
       price: 89,
       imgPortrait: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1slc.png",
       imgLandscape: "https://steamcdn-a.akamaihd.net/steam/apps/1282690/capsule_616x353.jpg?t=1591304094",
+      imgSquare: "https://www.mobygames.com/images/covers/l/459398-crysis-3-playstation-3-front-cover.jpg",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -156,6 +169,7 @@ export class GamesService {
       price: 199.9,
       imgPortrait: "https://media.playstation.com/is/image/SCEA/cyberpunk-2077-box-art-01-ps4-us-06jun19?$native_nt$",
       imgLandscape: "https://steamcdn-a.akamaihd.net/steam/apps/1091500/ss_85dfceb0df4165789a395e3c4d6cbcdf197930c6.1920x1080.jpg?t=1606918828",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202008/0416/6Bo40lnWU0BhgrOUm7Cb6by3.png",
       featured: false,
       bestSeller: true,
       trending: false,
@@ -167,6 +181,7 @@ export class GamesService {
       price: 299,
       imgPortrait: "https://assets.vg247.com/current//2021/07/fifa_21_covers-1-922x1152.png",
       imgLandscape: "https://entrelementos.com/wp-content/uploads/2021/08/fifa-22-1200x675.jpg",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202106/2914/mFIMmTCnJJzwZRcIErgm5Czr.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -178,6 +193,7 @@ export class GamesService {
       price: 239,
       imgPortrait: "https://s1.gaming-cdn.com/images/products/5679/orig/red-dead-redemption-2-standard-edition-cover.jpg",
       imgLandscape: "https://img.hype.games/cdn/facad932-4082-4d20-980d-34bb385d2233Red-Dead-Redemption-2-Ultimate-Edition-Cover.jpg",
+      imgSquare: "https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -189,6 +205,7 @@ export class GamesService {
       price: 89.99,
       imgPortrait: "https://store-images.s-microsoft.com/image/apps.16347.14554784103656548.6c0bfca6-ceff-4368-9bde-2fe50f344136.007dce43-6492-46f2-bb2b-2b28df98fc3c",
       imgLandscape: "https://img.ibxk.com.br/2018/03/26/26201929787520.jpg",
+      imgSquare: "https://i.pinimg.com/originals/c4/65/73/c465733a8d86ac57db730d1e7dc6b2d0.jpg",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -224,8 +241,6 @@ export class GamesService {
 
   public addGame(game: Game){
     game.id = this.getRandomIntInclusive(1000, 2000);
-    game.imgPortrait = "assets/images/games/portrait/borderlands3.png";
-    game.imgLandscape = "assets/images/games/landscape/borderlands3.png";
     game.featured = true;
     game.bestSeller = false;
     game.trending = false;
@@ -242,6 +257,7 @@ export class GamesService {
           obj.description = game.description;
           obj.imgPortrait = game.imgPortrait;
           obj.imgLandscape = game.imgLandscape;
+          obj.imgSquare = game.imgSquare;
           obj.featured = game.featured
           obj.bestSeller = game.bestSeller
           obj.trending = game.trending

@@ -21,10 +21,25 @@
     </div>
 
     <div class="input-block">
+      <label position="floating">Link da Imagem Retrato</label>
+      <input type="text" name="imgPortrait" [(ngModel)] = "game.imgPortrait">
+    </div>
+
+    <div class="input-block">
+      <label position="floating">Link da Imagem Paisagem </label>
+      <input type="text" name="imgLandscape" [(ngModel)] = "game.imgLandscape">
+    </div>
+
+    <div class="input-block">
+      <label position="floating">Link da Imagem Quadrada </label>
+      <input type="text" name="imgSquare" [(ngModel)] = "game.imgSquare">
+    </div>
+
+    <div class="input-block">
       <label position="stacked">Descrição</label>
       <textarea name="description" [(ngModel)] = "game.description"  placeholder="informe a descrição"></textarea>
     </div>
-
+    
     <ion-row>
       <ion-col size="6">
         <ion-button (click)="add()" expand="block" color="success">

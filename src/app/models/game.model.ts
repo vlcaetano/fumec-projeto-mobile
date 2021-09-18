@@ -4,7 +4,8 @@ export class Game {
   price: number
   description: string
   imgPortrait: string
-  imgLandscape: string  
+  imgLandscape: string 
+  imgSquare: string 
   featured: boolean
   bestSeller: boolean
   trending: boolean
@@ -15,7 +16,8 @@ export class Game {
               price?: number,
               description?: string,
               imgPortrait?: string,
-              imgLandscape?: string , 
+              imgLandscape?: string ,
+              imgSquare?: string,  
               featured?: boolean,
               bestSeller?: boolean,
               trending?: boolean) {
@@ -25,6 +27,7 @@ export class Game {
     this.description = (description)? description : 'Descrição';
     this.imgPortrait = (imgPortrait)? imgPortrait : '';
     this.imgLandscape = (imgLandscape)? imgLandscape : '';
+    this.imgSquare = (imgSquare)? imgSquare : '';
     this.featured = (featured)? featured : false;
     this.bestSeller = (bestSeller)? bestSeller : false;
     this.trending = (trending)? trending : false;

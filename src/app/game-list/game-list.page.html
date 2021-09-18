@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>game-list</ion-title>
+    <ion-title>Lista de Jogos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div>
+    <ion-searchbar placeholder="Digite o nome de um jogo!" [(ngModel)]="queryText" (ionInput)="filterGame($event)" clearInput>
+      
+    </ion-searchbar>
+  </div>
+  <div>
+    <ion-list>
+      <ion-item no-lines *ngFor="let cidade of cidades">
+        <h3>{{game.name}}</h3>
+      </ion-item>
+    </ion-list>
+    
+  </div>
+  <div class="flex-container">
+    <ion-list>
+      <ion-item *ngFor="let game of games">
+        <div class="item-painel">
+          <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
+            <img src={{game.imgSquare}} />
+          <h4>{{game.name}}</h4>
+          </a>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
