@@ -23,7 +23,7 @@ export class GameUpdatePage implements OnInit {
 
   public update(){
     this.gameService.updateGame(this.game);
-    this.route.navigate(['/tabs/home']);
+    this.route.navigate(['/painel']);
   }
 
 }

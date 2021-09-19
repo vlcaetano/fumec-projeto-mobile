@@ -17,7 +17,7 @@
 
       <div class="input-block">
         <label position="floating">Preço</label>
-        <input type="text" name="price" [(ngModel)] = "game.price">
+        <input type="number" name="price" [(ngModel)] = "game.price">
       </div>
 
       <div class="input-block">
@@ -48,7 +48,7 @@
       </ion-col>
 
       <ion-col size="6">
-        <ion-button routerLink="/detalhes/{{game.id}}"  expand="block" color="primary">
+        <ion-button routerLink="/painel"  expand="block" color="primary">
           Cancelar
         </ion-button>
       </ion-col>
