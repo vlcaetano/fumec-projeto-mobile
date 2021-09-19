@@ -16,13 +16,9 @@ export class HomePage {
     spaceBetween: 5.5
   }
 
-  public featuredGames: Game[]
-  public bestSellerGames: Game[]
+  public games: Game[]
 
-  constructor(private gamesService: GamesService) { }
-
-  ionViewWillEnter() {
-    this.featuredGames = this.gamesService.getFeaturedGames()
-    this.bestSellerGames = this.gamesService.getBestSellerGames()
+  constructor(private gamesService: GamesService) {
+    this.games = this.gamesService.getAll()
   }
 }
