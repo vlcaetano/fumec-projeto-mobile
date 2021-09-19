@@ -2,31 +2,35 @@
   
   <h1>Destaques</h1>
   <ion-slides [options]="slideOpts">
-    <ion-slide *ngFor="let game of featuredGames">
-      <div class="jogo">
-        <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
-          <img src={{game.imgPortrait}} />
-          <div class="jogo-nome">
-            <h4>{{game.name}}</h4>
-            <h5>{{game.price | currency:'BRL'}}</h5>
-          </div>
-        </a>
-      </div>
-    </ion-slide>
+    <ng-container *ngFor="let game of games">
+      <ion-slide *ngIf="game.featured">
+        <div class="jogo">
+          <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
+            <img src={{game.imgPortrait}} />
+            <div class="jogo-nome">
+              <h4>{{game.name}}</h4>
+              <h5>{{game.price | currency:'BRL'}}</h5>
+            </div>
+          </a>
+        </div>
+      </ion-slide>
+    </ng-container>
   </ion-slides>
 
   <h1>Mais vendidos</h1>
   <ion-slides [options]="slideOpts">
-    <ion-slide *ngFor="let game of bestSellerGames">
-      <div class="jogo">
-        <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
-          <img src={{game.imgPortrait}} />
-          <div class="jogo-nome">
-            <h4>{{game.name}}</h4>
-            <h5>{{game.price | currency:'BRL'}}</h5>
-          </div>
-        </a>
-      </div>
-    </ion-slide>
+    <ng-container *ngFor="let game of games">
+      <ion-slide *ngIf="game.bestSeller">
+        <div class="jogo">
+          <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
+            <img src={{game.imgPortrait}} />
+            <div class="jogo-nome">
+              <h4>{{game.name}}</h4>
+              <h5>{{game.price | currency:'BRL'}}</h5>
+            </div>
+          </a>
+        </div>
+      </ion-slide>
+    </ng-container>
   </ion-slides>
 </ion-content>
