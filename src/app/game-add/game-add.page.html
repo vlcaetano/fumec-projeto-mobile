@@ -35,6 +35,17 @@
         <input type="text" name="imgSquare" [(ngModel)]="game.imgSquare">
       </div>
 
+      <div>
+        <ion-checkbox [(ngModel)]="game.featured" name="featured"></ion-checkbox>
+        <ion-label>Destaques</ion-label>
+
+        <ion-checkbox [(ngModel)]="game.bestSeller" name="bestSeller"></ion-checkbox>
+        <ion-label>Mais Vendidos</ion-label>
+
+        <ion-checkbox [(ngModel)]="game.trending" name="trending"></ion-checkbox>
+        <ion-label>Novidades</ion-label>
+      </div>
+
       <div class="input-block">
         <label position="stacked">Descrição</label>
         <textarea name="description" [(ngModel)]="game.description" placeholder="informe a descrição"></textarea>

@@ -10,7 +10,7 @@ import { GamesService } from '../services/games.service';
 })
 export class GameUpdatePage implements OnInit {
   
-  public game: Game = new Game();
+  public game: Game
 
   constructor(private gameService: GamesService, 
               private activeRoute: ActivatedRoute, 
@@ -20,7 +20,7 @@ export class GameUpdatePage implements OnInit {
     const code = Number(this.activeRoute.snapshot.paramMap.get('id'));
     this.game = this.gameService.getGameById(code);
   }
-
+  
   public update(){
     this.gameService.updateGame(this.game);
     this.route.navigate(['/painel']);

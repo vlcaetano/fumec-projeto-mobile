@@ -205,7 +205,7 @@ export class GamesService {
       price: 89.99,
       imgPortrait: "https://store-images.s-microsoft.com/image/apps.16347.14554784103656548.6c0bfca6-ceff-4368-9bde-2fe50f344136.007dce43-6492-46f2-bb2b-2b28df98fc3c",
       imgLandscape: "https://img.ibxk.com.br/2018/03/26/26201929787520.jpg",
-      imgSquare: "https://i.pinimg.com/originals/c4/65/73/c465733a8d86ac57db730d1e7dc6b2d0.jpg",
+      imgSquare: "https://cdna.artstation.com/p/assets/covers/images/009/864/496/large/joachim-coppens-artstation-square-thumb-wld.jpg?1521295418",
       featured: false,
       bestSeller: false,
       trending: false,
