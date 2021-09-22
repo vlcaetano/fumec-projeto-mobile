@@ -11,44 +11,48 @@
   <form>
     <fieldset>
       <div class="input-block">
-        <label position="floating">Nome</label>
+        <label>Nome</label>
         <input type="text" name="name" [(ngModel)]="game.name" placeholder="informe o nome">
       </div>
 
       <div class="input-block">
-        <label position="floating">Preço</label>
+        <label>Preço</label>
         <input type="number" name="price" [(ngModel)]="game.price" placeholder="informe o preço">
       </div>
 
       <div class="input-block">
-        <label position="floating">Link da Imagem Retrato</label>
+        <label>Link da Imagem Retrato</label>
         <input type="text" name="imgPortrait" [(ngModel)]="game.imgPortrait">
       </div>
 
       <div class="input-block">
-        <label position="floating">Link da Imagem Paisagem </label>
+        <label>Link da Imagem Paisagem </label>
         <input type="text" name="imgLandscape" [(ngModel)]="game.imgLandscape">
       </div>
 
       <div class="input-block">
-        <label position="floating">Link da Imagem Quadrada </label>
+        <label>Link da Imagem Quadrada </label>
         <input type="text" name="imgSquare" [(ngModel)]="game.imgSquare">
       </div>
 
-      <div>
+      <div class="input-block">
+        <label>Descrição</label>
+        <textarea name="description" [(ngModel)]="game.description" placeholder="informe a descrição"></textarea>
+      </div>
+      
+      <div class="checkbox-block">
         <ion-checkbox [(ngModel)]="game.featured" name="featured"></ion-checkbox>
         <ion-label>Destaques</ion-label>
-
-        <ion-checkbox [(ngModel)]="game.bestSeller" name="bestSeller"></ion-checkbox>
-        <ion-label>Mais Vendidos</ion-label>
-
-        <ion-checkbox [(ngModel)]="game.trending" name="trending"></ion-checkbox>
-        <ion-label>Novidades</ion-label>
       </div>
 
-      <div class="input-block">
-        <label position="stacked">Descrição</label>
-        <textarea name="description" [(ngModel)]="game.description" placeholder="informe a descrição"></textarea>
+      <div class="checkbox-block">
+        <ion-checkbox [(ngModel)]="game.bestSeller" name="bestSeller"></ion-checkbox>
+        <ion-label>Mais Vendidos</ion-label>
+      </div>
+
+      <div class="checkbox-block">
+        <ion-checkbox [(ngModel)]="game.trending" name="trending"></ion-checkbox>
+        <ion-label>Novidades</ion-label>
       </div>
 
       <ion-row>

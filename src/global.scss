@@ -150,6 +150,22 @@ textarea {
   font-size: 1.1em;
 }
 
+.checkbox-block{
+  font-size: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+ 
+}
+
+ion-checkbox{
+  margin-right: 5px;
+  --border-color: var(--ion-color-medium);
+  --border-width: 1px;
+  --background: var(--ion-color-light);
+}
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 

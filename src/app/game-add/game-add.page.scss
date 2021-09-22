@@ -21,16 +21,10 @@ form {
   align-items: center;
 }
 
-legend {
-  font-size: 2em;
-  font-weight: 600;
-
-  padding: 20px 0;
-}
-
 label {
   font-family: 'Poppins', sans-serif;
   margin-top: 10px;
+  font-size: 1em;
 }
 
 fieldset {
@@ -69,31 +63,6 @@ input, textarea {
   width: 100%;
 
   margin-bottom: 15px;
-}
-
-button{
-  border: none;
-
-  width: 150px;
-  height: 40px;
-
-  border-radius: 5px;
-  margin: 12px auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-  color: var(--ion-color-light);
-  font-size: large;
-
-  transition: background 0.2s; /* transição para o hover */
-  background: var(--ion-color-primary);
-}
-
-button:hover {
-  background: var(--ion-color-primary-shade);
 }
 
 ion-header {
