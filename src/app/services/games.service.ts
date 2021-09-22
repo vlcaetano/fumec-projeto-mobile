@@ -29,7 +29,7 @@ export class GamesService {
       featured: false,
       bestSeller: false,
       trending: true,
-      description: "Monte sua equipe com os heróis mais poderosos da Terra, incorpore seus poderes e viva seus sonhos de super-herói.<br><br>Marvel\"s Avengers é um jogo épico de ação e aventura em terceira pessoa que combina uma história original cinematográfica com jogabilidade individual e cooperativa. <br><br> Monte uma equipe com até quatro jogadores online, domine habilidades extraordinárias, personalize um elenco crescente de heróis e proteja a Terra de ameaças cada vez maiores."
+      description: "Gang Beasts é um party game multijogador bobo com personagens grosseiramente gelatinosos, sequências de luta brutalmente hilárias e locais perigosamente insanos, ambientado nas duras ruas de Bife City."
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ export class GamesService {
       featured: false,
       bestSeller: true,
       trending: false,
-      description: "Nada é o que parece numa emocionante campanha para um jogador da Raven Software, onde os intervenientes se defrontam com figuras históricas e verdades duras, ao lutarem em todo o mundo, passando por locais icónicos como Berlim Oriental, o Vietname, a Turquia, a sede do KGB soviético e muito mais."
+      description: "A premiada série Call of Duty® retorna com o Call of Duty®: Vanguard, no qual os jogadores vão viver batalhas decisivas da Segunda Guerra Mundial enquanto lutam pela vitória nas Frentes Oriental e Ocidental da Europa, no Pacífico e no Norte da África."
     },
     {
       id: 4,
@@ -77,7 +77,7 @@ export class GamesService {
       featured: true,
       bestSeller: false,
       trending: false,
-      description: "Use suas habilidades em engenharia neste novo e envolvente simulador de construção de pontes repleto de recursos.<br><br> Passe horas resolvendo quebra-cabeças no modo Campanha e, em seguida, crie seu próprio design no modo Caixa de Areia.<br><br> Desafie seus amigos e outros membros da comunidade na Oficina do Steam para que tentem resolver seus quebra-cabeças, e aproveite para baixar os novos níveis enviados por outros jogadores."
+      description: "Domine as artes letais de samurai na pele de um guerreiro metade humano, metade yokai, nesta sequência desafiadora do RPG de ação.<br><br>Explore o Japão da violenta era Sengoku e o letal Reino Sombrio, ambos infestados de demônios grotescos e impiedosos.<br><br>Empunhe armas letais e extermine todos os inimigos que surgirem pelo caminho. Com o sistema de combate reformulado e a habilidade de virar um yokai completo, você terá poderes devastadores."
     },
     {
       id: 7,
@@ -161,7 +161,7 @@ export class GamesService {
       featured: false,
       bestSeller: true,
       trending: false,
-      description: "O destino do mundo está em suas mãos. Inimigos novos e antigos ameaçam a paz que você lutou tanto para conseguir 24 anos atrás. A sua busca pelo Alpha Ceph continua, mas desta vez você também precisará expor a verdade por trás da C.E.L.L. Corporation. <br><br>Não será fácil, mas seu Nanotraje ajudará a abrir um caminho para a vitória. Execute um ataque furtivo para derrotar seus adversários silenciosamente ou dizime o inimigo com uma explosão de força bruta. Não existe forma errada de salvar o mundo."
+      description: "Dead by Daylight é um jogo de terror multiplayer (4vs1) onde um jogador assume o papel do assassino selvagem e os outros quatro jogadores jogam como sobreviventes, tentando escapar do assassino e evitar ser pego, torturado e morto."
     },
     {
       id: 14,
