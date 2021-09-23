@@ -13,6 +13,7 @@ export class GamesService {
       price: 119.9,
       imgPortrait: "assets/images/games/portrait/borderlands3.png",
       imgLandscape: "assets/images/games/landscape/borderlands3.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202010/2323/p50N4PBK9rNanGYKFecTvac5.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -20,25 +21,27 @@ export class GamesService {
     },
     {
       id: 2,
-      name: "Marvel's Avengers",
-      price: 99.99,
-      imgPortrait: "assets/images/games/portrait/avengers.png",
-      imgLandscape: "assets/images/games/landscape/avengers.png",
+      name: "Gang Beasts",
+      price: 36.99,
+      imgPortrait: "https://e.snmc.io/lk/l/x/54624af7734e044bce801f69fb34c0fe/8964939",
+      imgLandscape: "https://news.xbox.com/pt-br/wp-content/uploads/sites/8/2021/06/Gang-Beasts-Key-Art.jpg?resize=1024,576",
+      imgSquare: "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/35/a6/db/35a6db02-2f70-db38-e064-44b423048385/AppIcon-0-1x_U007emarketing-0-85-220-4.png/1024x1024bb.png",
       featured: false,
-      bestSeller: true,
-      trending: false,
-      description: "Monte sua equipe com os heróis mais poderosos da Terra, incorpore seus poderes e viva seus sonhos de super-herói.<br><br>Marvel\"s Avengers é um jogo épico de ação e aventura em terceira pessoa que combina uma história original cinematográfica com jogabilidade individual e cooperativa. <br><br> Monte uma equipe com até quatro jogadores online, domine habilidades extraordinárias, personalize um elenco crescente de heróis e proteja a Terra de ameaças cada vez maiores."
+      bestSeller: false,
+      trending: true,
+      description: "Gang Beasts é um party game multijogador bobo com personagens grosseiramente gelatinosos, sequências de luta brutalmente hilárias e locais perigosamente insanos, ambientado nas duras ruas de Bife City."
     },
     {
       id: 3,
-      name: "Call of Duty: Black Ops Cold War",
+      name: "Call of Duty: Vanguard",
       price: 229.9,
-      imgPortrait: "assets/images/games/portrait/cod.png",
-      imgLandscape: "assets/images/games/landscape/cod.png",
+      imgPortrait: "https://store-images.s-microsoft.com/image/apps.31712.14284165171924425.328fdc67-fafc-4929-b10f-b1bc44a36c07.9cb9d66c-985e-4c82-b678-6a638d68b0c8",
+      imgLandscape: "https://i1.wp.com/thebusinessofesports.com/wp-content/uploads/2021/08/VGD_REVEAL-001.jpg?resize=1536%2C869&ssl=1",
+      imgSquare: "https://image.api.playstation.com/vulcan/img/rnd/202108/2717/W2MFtexi8Ljl8McgGULpY6hx.png",
       featured: false,
       bestSeller: true,
       trending: false,
-      description: "Nada é o que parece numa emocionante campanha para um jogador da Raven Software, onde os intervenientes se defrontam com figuras históricas e verdades duras, ao lutarem em todo o mundo, passando por locais icónicos como Berlim Oriental, o Vietname, a Turquia, a sede do KGB soviético e muito mais."
+      description: "A premiada série Call of Duty® retorna com o Call of Duty®: Vanguard, no qual os jogadores vão viver batalhas decisivas da Segunda Guerra Mundial enquanto lutam pela vitória nas Frentes Oriental e Ocidental da Europa, no Pacífico e no Norte da África."
     },
     {
       id: 4,
@@ -46,6 +49,7 @@ export class GamesService {
       price: 75.99,
       imgPortrait: "assets/images/games/portrait/samurai.png",
       imgLandscape: "assets/images/games/landscape/samurai.png",
+      imgSquare: "https://vulcan.dl.playstation.net/ap/rnd/202007/1106/qycF6NNWh51Sz9FNthEqXwW0.png",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -57,6 +61,7 @@ export class GamesService {
       price: 89.99,
       imgPortrait: "assets/images/games/portrait/monster.png",
       imgLandscape: "assets/images/games/landscape/monster.png",
+      imgSquare: "https://games-b26f.kxcdn.com/wp-content/uploads/2019/07/monster-hunter-world-iceborne-1024x1024.jpg",
       featured: false,
       bestSeller: true,
       trending: false,
@@ -64,14 +69,15 @@ export class GamesService {
     },
     {
       id: 6,
-      name: "Poly Bridge",
-      price: 20.69,
-      imgPortrait: "assets/images/games/portrait/polybridge.png",
-      imgLandscape: "assets/images/games/landscape/polybridge.png",
-      featured: false,
+      name: "Nioh 2",
+      price: 120.99,
+      imgPortrait: "https://live.staticflickr.com/65535/48593864851_f118ff0173_k.jpg",
+      imgLandscape: "https://image.api.playstation.com/vulcan/ap/rnd/202011/0516/f21KkGycWwf7Pkj6hyjNLFo1.jpg",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202012/0716/VdvtCeb0L1OuGlhguLuo6gE9.png",
+      featured: true,
       bestSeller: false,
       trending: false,
-      description: "Use suas habilidades em engenharia neste novo e envolvente simulador de construção de pontes repleto de recursos.<br><br> Passe horas resolvendo quebra-cabeças no modo Campanha e, em seguida, crie seu próprio design no modo Caixa de Areia.<br><br> Desafie seus amigos e outros membros da comunidade na Oficina do Steam para que tentem resolver seus quebra-cabeças, e aproveite para baixar os novos níveis enviados por outros jogadores."
+      description: "Domine as artes letais de samurai na pele de um guerreiro metade humano, metade yokai, nesta sequência desafiadora do RPG de ação.<br><br>Explore o Japão da violenta era Sengoku e o letal Reino Sombrio, ambos infestados de demônios grotescos e impiedosos.<br><br>Empunhe armas letais e extermine todos os inimigos que surgirem pelo caminho. Com o sistema de combate reformulado e a habilidade de virar um yokai completo, você terá poderes devastadores."
     },
     {
       id: 7,
@@ -79,6 +85,7 @@ export class GamesService {
       price: 37.99,
       imgPortrait: "assets/images/games/portrait/fallguys.png",
       imgLandscape: "assets/images/games/landscape/fallguys.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/img/rnd/202107/2119/LKoMmjhc0rz2Dao82MLvlpht.png",
       featured: false,
       bestSeller: false,
       trending: true,
@@ -90,6 +97,7 @@ export class GamesService {
       price: 10.89,
       imgPortrait: "assets/images/games/portrait/amongus.png",
       imgLandscape: "assets/images/games/landscape/amongus.png",
+      imgSquare: "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/c2025b041d22a3315d187f5f6c8f46d9.jpg",
       featured: false,
       bestSeller: false,
       trending: true,
@@ -101,6 +109,7 @@ export class GamesService {
       price: 229.9,
       imgPortrait: "assets/images/games/portrait/mafiade.png",
       imgLandscape: "assets/images/games/landscape/mafiade.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202006/1023/35jaBRLW6kV4wfF3bi0nxRIH.png",
       featured: false,
       bestSeller: false,
       trending: true,
@@ -112,6 +121,7 @@ export class GamesService {
       price: 89.99,
       imgPortrait: "assets/images/games/portrait/re2.png",
       imgLandscape: "assets/images/games/landscape/re2.png",
+      imgSquare: "https://image.api.playstation.com/cdn/UP0102/CUSA09193_00/YDXpf9y12EN7AWyRgO9z24F8x72kwH4m.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -123,6 +133,7 @@ export class GamesService {
       price: 47.49,
       imgPortrait: "assets/images/games/portrait/hades.png",
       imgLandscape: "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Hades_image1600w.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -134,6 +145,7 @@ export class GamesService {
       price: 47.49,
       imgPortrait: "https://cdn-products.eneba.com/resized-products/uiAcncxmFfJ3JRqLjaW3EemyTDu1rK1f7QMoflzY6B4_350x200_1x-0.jpg",
       imgLandscape: "https://projectn.com.br/wp-content/uploads/2020/11/7e1518_cff080cbbae743439723d7455d525f82_mv2.jpg",
+      imgSquare: "https://image.api.playstation.com/vulcan/img/rnd/202106/0411/HMFFrDc55LTdqf9sls0eMzK4.png",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -141,14 +153,15 @@ export class GamesService {
     },
     {
       id: 13,
-      name: "Crysis 3",
-      price: 89,
-      imgPortrait: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1slc.png",
-      imgLandscape: "https://steamcdn-a.akamaihd.net/steam/apps/1282690/capsule_616x353.jpg?t=1591304094",
+      name: "Dead By Daylight",
+      price: 39.99,
+      imgPortrait: "https://www.mobygames.com/images/covers/l/603701-dead-by-daylight-special-edition-windows-apps-front-cover.jpg",
+      imgLandscape: "https://i.redd.it/1pj94zx19y901.png",
+      imgSquare: "https://image.api.playstation.com/vulcan/img/rnd/202105/2616/031IHhxEk8txw0w3IKfGXFiW.png",
       featured: false,
-      bestSeller: false,
+      bestSeller: true,
       trending: false,
-      description: "O destino do mundo está em suas mãos. Inimigos novos e antigos ameaçam a paz que você lutou tanto para conseguir 24 anos atrás. A sua busca pelo Alpha Ceph continua, mas desta vez você também precisará expor a verdade por trás da C.E.L.L. Corporation. <br><br>Não será fácil, mas seu Nanotraje ajudará a abrir um caminho para a vitória. Execute um ataque furtivo para derrotar seus adversários silenciosamente ou dizime o inimigo com uma explosão de força bruta. Não existe forma errada de salvar o mundo."
+      description: "Dead by Daylight é um jogo de terror multiplayer (4vs1) onde um jogador assume o papel do assassino selvagem e os outros quatro jogadores jogam como sobreviventes, tentando escapar do assassino e evitar ser pego, torturado e morto."
     },
     {
       id: 14,
@@ -156,6 +169,7 @@ export class GamesService {
       price: 199.9,
       imgPortrait: "https://media.playstation.com/is/image/SCEA/cyberpunk-2077-box-art-01-ps4-us-06jun19?$native_nt$",
       imgLandscape: "https://steamcdn-a.akamaihd.net/steam/apps/1091500/ss_85dfceb0df4165789a395e3c4d6cbcdf197930c6.1920x1080.jpg?t=1606918828",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202008/0416/6Bo40lnWU0BhgrOUm7Cb6by3.png",
       featured: false,
       bestSeller: true,
       trending: false,
@@ -167,6 +181,7 @@ export class GamesService {
       price: 299,
       imgPortrait: "https://assets.vg247.com/current//2021/07/fifa_21_covers-1-922x1152.png",
       imgLandscape: "https://entrelementos.com/wp-content/uploads/2021/08/fifa-22-1200x675.jpg",
+      imgSquare: "https://image.api.playstation.com/vulcan/ap/rnd/202106/2914/mFIMmTCnJJzwZRcIErgm5Czr.png",
       featured: true,
       bestSeller: false,
       trending: false,
@@ -178,6 +193,7 @@ export class GamesService {
       price: 239,
       imgPortrait: "https://s1.gaming-cdn.com/images/products/5679/orig/red-dead-redemption-2-standard-edition-cover.jpg",
       imgLandscape: "https://img.hype.games/cdn/facad932-4082-4d20-980d-34bb385d2233Red-Dead-Redemption-2-Ultimate-Edition-Cover.jpg",
+      imgSquare: "https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png",
       featured: false,
       bestSeller: false,
       trending: false,
@@ -189,8 +205,9 @@ export class GamesService {
       price: 89.99,
       imgPortrait: "https://store-images.s-microsoft.com/image/apps.16347.14554784103656548.6c0bfca6-ceff-4368-9bde-2fe50f344136.007dce43-6492-46f2-bb2b-2b28df98fc3c",
       imgLandscape: "https://img.ibxk.com.br/2018/03/26/26201929787520.jpg",
+      imgSquare: "https://cdna.artstation.com/p/assets/covers/images/009/864/496/large/joachim-coppens-artstation-square-thumb-wld.jpg?1521295418",
       featured: false,
-      bestSeller: false,
+      bestSeller: true,
       trending: false,
       description: "Sea of Thieves oferece a experiência pirata definitiva, desde navegar e lutar até explorar e pilhar - tudo o que você precisa para viver a vida pirata e se tornar uma lenda por seus feitos. Sem nenhum papel definido, você tem total liberdade para interagir com o mundo e os outros jogadores como preferir.\nSeja viajando em grupo ou velejando a sós, você certamente encontrará outras tripulações nessa aventura de mundo compartilhado - mas serão elas amigas ou inimigas, e o que você fará a respeito?"
     }
@@ -224,11 +241,6 @@ export class GamesService {
 
   public addGame(game: Game){
     game.id = this.getRandomIntInclusive(1000, 2000);
-    game.imgPortrait = "assets/images/games/portrait/borderlands3.png";
-    game.imgLandscape = "assets/images/games/landscape/borderlands3.png";
-    game.featured = true;
-    game.bestSeller = false;
-    game.trending = false;
     this.games.push(game);
   }
 
@@ -242,6 +254,7 @@ export class GamesService {
           obj.description = game.description;
           obj.imgPortrait = game.imgPortrait;
           obj.imgLandscape = game.imgLandscape;
+          obj.imgSquare = game.imgSquare;
           obj.featured = game.featured
           obj.bestSeller = game.bestSeller
           obj.trending = game.trending

@@ -11,34 +11,63 @@
   <form>
     <fieldset>
       <div class="input-block">
-      <label position="floating">Nome</label>
-      <input type="text" name="name" [(ngModel)] = "game.name">
+        <label position="floating">Nome</label>
+        <input type="text" name="name" [(ngModel)]="game.name">
       </div>
 
       <div class="input-block">
-      <label position="floating">Preço</label>
-      <input type="text" name="price" [(ngModel)] = "game.price">
-    </div>
+        <label position="floating">Preço</label>
+        <input type="number" name="price" [(ngModel)]="game.price">
+      </div>
 
-    <div class="input-block">
-      <label position="stacked">Descrição</label>
-      <textarea name="description" [(ngModel)] = "game.description" ></textarea>
-    </div>
+      <div class="input-block">
+        <label position="floating">Link da Imagem Retrato</label>
+        <input type="text" name="imgPortrait" [(ngModel)]="game.imgPortrait">
+      </div>
 
-    <ion-row>
-      <ion-col size="6">
-        <ion-button (click)="update()" expand="block" color="success">
-         Salvar
-        </ion-button>
-      </ion-col>
+      <div class="input-block">
+        <label position="floating">Link da Imagem Paisagem </label>
+        <input type="text" name="imgLandscape" [(ngModel)]="game.imgLandscape">
+      </div>
 
-      <ion-col size="6">
-        <ion-button routerLink="/detalhes/{{game.id}}"  expand="block" color="primary">
-          Cancelar
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </fieldset>
+      <div class="input-block">
+        <label position="floating">Link da Imagem Quadrada </label>
+        <input type="text" name="imgSquare" [(ngModel)]="game.imgSquare">
+      </div>
+
+      <div class="input-block">
+        <label position="stacked">Descrição</label>
+        <textarea name="description" [(ngModel)]="game.description"></textarea>
+      </div>
+
+      <div class="checkbox-block">
+        <ion-checkbox [(ngModel)]="game.featured" name="featured"></ion-checkbox>
+        <ion-label>Destaques</ion-label>
+      </div>
+
+      <div class="checkbox-block">
+        <ion-checkbox [(ngModel)]="game.bestSeller" name="bestSeller"></ion-checkbox>
+        <ion-label>Mais Vendidos</ion-label>
+      </div>
+
+      <div class="checkbox-block">
+        <ion-checkbox [(ngModel)]="game.trending" name="trending"></ion-checkbox>
+        <ion-label>Novidades</ion-label>
+      </div>
+      
+      <ion-row>
+        <ion-col size="6">
+          <ion-button (click)="update()" expand="block" color="success">
+            Salvar
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-button routerLink="/painel" expand="block" color="primary">
+            Cancelar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </fieldset>
   </form>
 </ion-content>
-
