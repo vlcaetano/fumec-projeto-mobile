@@ -12,7 +12,7 @@ export class PanelPage implements OnInit {
   public games: Game[]
 
   constructor(private gamesService: GamesService) {
-    this.updateData()
+    this.games = this.gamesService.getAll()
   }
 
   ngOnInit() {
@@ -20,10 +20,5 @@ export class PanelPage implements OnInit {
 
   public deleteGame(id: number) {
     this.gamesService.deleteGame(id)
-    this.updateData()
-  }
-
-  public updateData() {
-    this.games = this.gamesService.getAll()
   }
 }
