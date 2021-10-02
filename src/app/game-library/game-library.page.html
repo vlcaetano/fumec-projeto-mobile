@@ -3,7 +3,7 @@
     <h1>Todos os {{numOfGames}} jogos</h1>
     <ion-row>
       <ion-col size="6" *ngFor="let game of games">
-        <div class="item-painel">
+        <div class="jogo-lista">
           <a class="link-jogo" routerLink="/detalhes/{{game.id}}">
             <img src={{game.imgSquare}} />
           <h4>{{game.name}}</h4>
