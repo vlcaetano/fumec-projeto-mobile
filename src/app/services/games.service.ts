@@ -239,6 +239,10 @@ export class GamesService {
     return this.games.filter(game => game.trending)
   }
 
+  public getUserGames(): Game[] {
+    return Array.of(this.games[0], this.games[1], this.games[2])
+  }
+
   public addGame(game: Game){
     game.id = this.getRandomIntInclusive(1000, 2000);
     this.games.push(game);

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Game } from '../models/game.model';
+import { GamesService } from '../services/games.service';
 
 @Component({
   selector: 'app-game-library',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class GameLibraryPage {
 
-  constructor() {}
-
+  public games: Game[]
+  public numOfGames: number
+  
+  constructor(private gamesService: GamesService) {
+    this.games = this.gamesService.getUserGames()
+    this.numOfGames = this.games.length
+  }
 }

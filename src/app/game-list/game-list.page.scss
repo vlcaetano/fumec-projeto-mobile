@@ -4,18 +4,17 @@ h4 {
   font-weight: 600;
   margin: 0px;
   color: var(--ion-color-dark-tint);
-  display:table-cell;
 }
 
-.item-painel {
+ion-row {
+  width: 98%;
+}
+
+.jogo-lista {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
   margin-bottom: 20px;
-}
-
-.botoes-painel {
-  display: flex;
 }
