@@ -12,7 +12,7 @@ export class PanelPage implements OnInit {
   public games: Game[]
 
   constructor(private gamesService: GamesService) {
-    this.games = this.gamesService.getAll()
+   this.getAllGamesFromFirebase()
   }
 
   ngOnInit() {
@@ -20,5 +20,27 @@ export class PanelPage implements OnInit {
 
   public deleteGame(id: number) {
     this.gamesService.deleteGame(id)
+  }
+
+  private async getAllGamesFromFirebase() {
+    this.gamesService.getAll().subscribe((gamesFirebase) => {
+      this.games = gamesFirebase.map((game) => {
+        const gameId = game.payload.doc.id
+        const gameData = game.payload.doc.data()
+
+        return {
+          id: gameId,
+          name: gameData['name'],
+          price: gameData['price'],
+          description: gameData['description'],
+          imgPortrait: gameData['imgPortrait'],
+          imgLandscape: gameData['imgLandscape'],
+          imgSquare: gameData['imgSquare'],
+          featured: gameData['featured'],
+          bestSeller: gameData['bestSeller'],
+          trending: gameData['trending']
+        }
+      })
+    })
   }
 }
