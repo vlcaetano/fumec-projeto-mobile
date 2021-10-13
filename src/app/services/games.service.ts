@@ -247,20 +247,8 @@ export class GamesService {
     return this.firestore.doc(`games/${game.id}`).update(game);
   }
 
-  public deleteGame(id: Number){
-    let posicao = null;
-
-    for(let i = 0; i < this.games.length; i++){
-      if (Number(this.games[i].id) === id){
-        posicao = i;
-        break;
-      }
-    }
-
-    if (posicao || posicao === 0){
-      this.games.splice(posicao,1);
-    }
-
+  public deleteGame(id: string){
+    return this.firestore.doc(`games/${id}`).delete();
   }
 
   private buildGame(gameId, gameData): Game {

@@ -18,7 +18,7 @@ export class PanelPage implements OnInit {
   ngOnInit() {
   }
 
-  public deleteGame(id: number) {
+  public deleteGame(id: string) {
     this.gamesService.deleteGame(id)
   }
 
