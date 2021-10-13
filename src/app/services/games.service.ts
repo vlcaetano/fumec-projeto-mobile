@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { Game } from '../models/game.model';
 
@@ -218,28 +217,21 @@ export class GamesService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  public getAll(): Observable<DocumentChangeAction<Game>[]> {
-    return this.firestore.collection('jogos').snapshotChanges() as Observable<DocumentChangeAction<Game>[]>
+  public getAll() {
+    return this.firestore.collection('games').snapshotChanges()
   }
 
-  public getGameById(id: number): Game {
-    for (const game of this.games) {
-      if (Number(game.id) === id) {
-        return game
+  public getGameById(id: string) {
+    return this.firestore.collection('games').doc(id).ref.get().then((gameFirebase) => {
+      if (gameFirebase.exists) {
+        const gameId = gameFirebase.id;
+        const gameData = gameFirebase.data();
+
+        return this.buildGame(gameId, gameData)
       }
-    }
-  }
 
-  public getFeaturedGames(): Game[] {
-    return this.games.filter(game => game.featured)
-  }
-
-  public getBestSellerGames(): Game[] {
-    return this.games.filter(game => game.bestSeller)
-  }
-
-  public getTrendingGames(): Game[] {
-    return this.games.filter(game => game.trending)
+      return this.buildEmptyGame()
+    })
   }
 
   public getUserGames(): Game[] {
@@ -248,7 +240,7 @@ export class GamesService {
 
   public addGame(game: Game) {
     delete game.id
-    return this.firestore.collection('jogos').add({ ...game })
+    return this.firestore.collection('games').add({ ...game })
   }
 
   public updateGame(game: Game){
@@ -285,5 +277,35 @@ export class GamesService {
       this.games.splice(posicao,1);
     }
 
+  }
+
+  private buildGame(gameId, gameData): Game {
+    return {
+      id: gameId,
+      name: gameData['name'],
+      price: gameData['price'],
+      description: gameData['description'],
+      imgPortrait: gameData['imgPortrait'],
+      imgLandscape: gameData['imgLandscape'],
+      imgSquare: gameData['imgSquare'],
+      featured: gameData['featured'],
+      bestSeller: gameData['bestSeller'],
+      trending: gameData['trending']
+    }
+  }
+
+  private buildEmptyGame(): Game {
+    return {
+      id: '',
+      name: '',
+      price: 0,
+      description: '',
+      imgPortrait: '',
+      imgLandscape: '',
+      imgSquare: '',
+      featured: false,
+      bestSeller: false,
+      trending: false,
+    }
   }
 }
