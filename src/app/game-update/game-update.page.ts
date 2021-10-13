@@ -10,7 +10,7 @@ import { GamesService } from '../services/games.service';
 })
 export class GameUpdatePage implements OnInit {
   
-  public game: Game
+  public game: Game = new Game()
 
   constructor(private gamesService: GamesService, 
               private activeRoute: ActivatedRoute, 
@@ -25,7 +25,6 @@ export class GameUpdatePage implements OnInit {
   }
   
   public update(){
-    this.gamesService.updateGame(this.game);
-    this.route.navigate(['/painel']);
+    this.gamesService.updateGame(this.game).then(() => this.route.navigate(['/painel']))
   }
 }

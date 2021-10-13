@@ -244,23 +244,7 @@ export class GamesService {
   }
 
   public updateGame(game: Game){
-    if(game.id || Number(game.id) === 0){
-
-      for(const obj of this.games){
-        if (obj.id === game.id){
-          obj.name = game.name;
-          obj.price = game.price;
-          obj.description = game.description;
-          obj.imgPortrait = game.imgPortrait;
-          obj.imgLandscape = game.imgLandscape;
-          obj.imgSquare = game.imgSquare;
-          obj.featured = game.featured
-          obj.bestSeller = game.bestSeller
-          obj.trending = game.trending
-          break;
-        }
-      }   
-    }
+    return this.firestore.doc(`games/${game.id}`).update(game);
   }
 
   public deleteGame(id: Number){
