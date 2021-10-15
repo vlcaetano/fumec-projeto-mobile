@@ -11,11 +11,11 @@ export class GamesService {
   constructor(private firestore: AngularFirestore) { }
 
   public getAll() {
-    return this.firestore.collection('games').snapshotChanges()
+    return this.firestore.collection<Game>('games').snapshotChanges()
   }
 
   public getGameById(id: string) {
-    return this.firestore.collection('games').doc(id).ref.get().then((gameFirebase) => {
+    return this.firestore.collection<Game>('games').doc(id).ref.get().then((gameFirebase) => {
       if (gameFirebase.exists) {
         const gameId = gameFirebase.id;
         const gameData = gameFirebase.data();
@@ -33,7 +33,7 @@ export class GamesService {
 
   public addGame(game: Game) {
     delete game.id
-    return this.firestore.collection('games').add({ ...game })
+    return this.firestore.collection<Game>('games').add({ ...game })
   }
 
   public updateGame(game: Game){

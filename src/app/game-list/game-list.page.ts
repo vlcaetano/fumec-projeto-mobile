@@ -11,6 +11,7 @@ import { GamesService } from '../services/games.service';
 export class GameListPage implements OnInit{
 
   public games: Game[]
+  public gamesAux: Game[]
   
   constructor(private gamesService: GamesService) {
     this.getAllGamesFromFirebase()
@@ -20,13 +21,17 @@ export class GameListPage implements OnInit{
   }
 
   filterGame(event: any){
-    // let queryText = event.target.value;
-    // this.getAllGamesFromFirebase()
-    // if (queryText && queryText.trim() != ''){
-    //   this.games = this.games.filter((game) => {
-    //     return (game.name.toLowerCase().indexOf(queryText.toLowerCase()) > -1);
-    //   })
-    // }
+    let queryText = event.target.value;
+    this.getAllGames()
+    if (queryText && queryText.trim() != ''){
+      this.games = this.games.filter((game) => {
+        return (game.name.toLowerCase().indexOf(queryText.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  private getAllGames() {
+    this.games = this.gamesAux
   }
 
   private async getAllGamesFromFirebase() {
@@ -48,6 +53,7 @@ export class GameListPage implements OnInit{
           trending: gameData['trending']
         }
       })
+      this.gamesAux = this.games
     })
   }
 }
