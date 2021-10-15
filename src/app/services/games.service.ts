@@ -11,7 +11,7 @@ export class GamesService {
   constructor(private firestore: AngularFirestore) { }
 
   public getAll() {
-    return this.firestore.collection<Game>('games').snapshotChanges()
+    return this.firestore.collection<Game>('games', ref => ref.orderBy('name')).snapshotChanges()
   }
 
   public getGameById(id: string) {
