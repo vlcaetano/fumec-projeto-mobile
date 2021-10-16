@@ -14,11 +14,11 @@ export class GameUpdatePage implements OnInit {
   private id: string;
 
   constructor(private gamesService: GamesService, 
-              private activeRoute: ActivatedRoute, 
-              private route: Router) { }
+              private route: ActivatedRoute, 
+              private router: Router) { }
 
   ngOnInit() {
-    this.id = this.activeRoute.snapshot.paramMap.get('id')
+    this.id = this.route.snapshot.params.id
 
     this.gamesService.getGameById(this.id).subscribe((game) => {
       this.game = game
@@ -26,6 +26,6 @@ export class GameUpdatePage implements OnInit {
   }
   
   public update(){
-    this.gamesService.updateGame(this.game, this.id).then(() => this.route.navigate(['/painel']))
+    this.gamesService.updateGame(this.game, this.id).then(() => this.router.navigate(['/painel']))
   }
 }
