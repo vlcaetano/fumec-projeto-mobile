@@ -11,20 +11,21 @@ import { GamesService } from '../services/games.service';
 export class GameUpdatePage implements OnInit {
   
   public game: Game = new Game()
+  private id: string;
 
   constructor(private gamesService: GamesService, 
               private activeRoute: ActivatedRoute, 
               private route: Router) { }
 
   ngOnInit() {
-    const id = this.activeRoute.snapshot.paramMap.get('id')
+    this.id = this.activeRoute.snapshot.paramMap.get('id')
 
-    this.gamesService.getGameById(id).then((game) => {
+    this.gamesService.getGameById(this.id).subscribe((game) => {
       this.game = game
     })
   }
   
   public update(){
-    this.gamesService.updateGame(this.game).then(() => this.route.navigate(['/painel']))
+    this.gamesService.updateGame(this.game, this.id).then(() => this.route.navigate(['/painel']))
   }
 }

@@ -21,7 +21,7 @@ export class GameDetailsPage implements OnInit {
   ngOnInit() {
     const id: string = this.route.snapshot.params.id
 
-    this.gamesService.getGameById(id).then((game) => {
+    this.gamesService.getGameById(id).subscribe((game) => {
       this.game = game
     })
   }
