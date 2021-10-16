@@ -11,21 +11,30 @@ import { GamesService } from '../services/games.service';
 export class GameListPage implements OnInit{
 
   public games: Game[]
+  public gamesAux: Game[]
   
-  constructor(private gamesService: GamesService) {
-    this.games = this.gamesService.getAll()
-  }
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit() {
+    this.getAllGamesFromFirebase()
   }
 
   filterGame(event: any){
     let queryText = event.target.value;
-    this.games = this.gamesService.getAll();
+
+    this.games = this.gamesAux
+    
     if (queryText && queryText.trim() != ''){
       this.games = this.games.filter((game) => {
         return (game.name.toLowerCase().indexOf(queryText.toLowerCase()) > -1);
       })
     }
+  }
+
+  private getAllGamesFromFirebase() {
+    this.gamesService.getAll().subscribe((gamesFirebase) => {
+      this.games = gamesFirebase
+      this.gamesAux = gamesFirebase
+    })
   }
 }

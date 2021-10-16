@@ -19,9 +19,14 @@ export class GameDetailsPage implements OnInit {
     private gamesService: GamesService) { }
 
   ngOnInit() {
-    const id: number = Number(this.route.snapshot.params.id)
+    const id: string = this.route.snapshot.params.id
 
-    this.game = this.gamesService.getGameById(id)
+    this.gamesService.getGameById(id).subscribe((game) => {
+      if (!game.name) {
+        this.router.navigateByUrl('/tabs/home')
+      }
+      this.game = game
+    })
   }
 
   public comprar() {

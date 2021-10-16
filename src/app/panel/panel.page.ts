@@ -11,14 +11,19 @@ export class PanelPage implements OnInit {
 
   public games: Game[]
 
-  constructor(private gamesService: GamesService) {
-    this.games = this.gamesService.getAll()
-  }
-
+  constructor(private gamesService: GamesService) { }
+  
   ngOnInit() {
+    this.getAllGamesFromFirebase()
   }
 
-  public deleteGame(id: number) {
+  public deleteGame(id: string) {
     this.gamesService.deleteGame(id)
+  }
+
+  private getAllGamesFromFirebase() {
+    this.gamesService.getAll().subscribe((gamesFirebase) => {
+      this.games = gamesFirebase
+    })
   }
 }

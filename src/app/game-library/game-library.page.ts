@@ -13,7 +13,13 @@ export class GameLibraryPage {
   public numOfGames: number
   
   constructor(private gamesService: GamesService) {
-    this.games = this.gamesService.getUserGames()
-    this.numOfGames = this.games.length
+    this.getAllGamesFromFirebase()
+  }
+
+  private getAllGamesFromFirebase() {
+    this.gamesService.getAll().subscribe((gamesFirebase) => {
+      this.games = gamesFirebase
+      this.numOfGames = this.games.length
+    })
   }
 }

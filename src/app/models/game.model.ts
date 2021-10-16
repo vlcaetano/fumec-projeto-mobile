@@ -1,5 +1,5 @@
 export class Game {
-  id: number
+  id: string
   name: string
   price: number
   description: string
@@ -11,7 +11,7 @@ export class Game {
   trending: boolean
 
   constructor()
-  constructor(id?: number,
+  constructor(id?: string,
               name?: string,
               price?: number,
               description?: string,
@@ -21,7 +21,7 @@ export class Game {
               featured?: boolean,
               bestSeller?: boolean,
               trending?: boolean) {
-    this.id = (id)? id : null;
+    this.id = (id)? id : '';
     this.name = (name)? name : '';
     this.price = (price)? price : 99.90;
     this.description = (description)? description : '';

@@ -19,6 +19,12 @@ export class HomePage {
   public games: Game[]
 
   constructor(private gamesService: GamesService) {
-    this.games = this.gamesService.getAll()
+    this.getAllGamesFromFirebase()
+  }
+
+  private getAllGamesFromFirebase() {
+    this.gamesService.getAll().subscribe((gamesFirebase) => {
+      this.games = gamesFirebase
+    })
   }
 }

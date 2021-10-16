@@ -21,8 +21,9 @@ export class GameAddPage implements OnInit {
 
   public async add(){
     if (this.game.name !== null && this.game.name !== undefined){
-      this.gamesService.addGame(this.game);
-      this.route.navigate(['/painel'])
+      this.gamesService.addGame(this.game).then(() => {
+        this.route.navigate(['/painel'])
+      }).catch(err => console.log(err))
     }
   }
 }
