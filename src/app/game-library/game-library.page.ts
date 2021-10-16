@@ -16,25 +16,9 @@ export class GameLibraryPage {
     this.getAllGamesFromFirebase()
   }
 
-  private async getAllGamesFromFirebase() {
+  private getAllGamesFromFirebase() {
     this.gamesService.getAll().subscribe((gamesFirebase) => {
-      this.games = gamesFirebase.map((game) => {
-        const gameId = game.payload.doc.id
-        const gameData = game.payload.doc.data()
-
-        return {
-          id: gameId,
-          name: gameData['name'],
-          price: gameData['price'],
-          description: gameData['description'],
-          imgPortrait: gameData['imgPortrait'],
-          imgLandscape: gameData['imgLandscape'],
-          imgSquare: gameData['imgSquare'],
-          featured: gameData['featured'],
-          bestSeller: gameData['bestSeller'],
-          trending: gameData['trending']
-        }
-      })
+      this.games = gamesFirebase
       this.numOfGames = this.games.length
     })
   }

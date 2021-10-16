@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 import { Game } from '../models/game.model';
 
@@ -10,8 +11,10 @@ export class GamesService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  public getAll() {
-    return this.firestore.collection<Game>('games', ref => ref.orderBy('name')).snapshotChanges()
+  public getAll(): Observable<Game[]> {
+    return this.firestore
+      .collection<Game>('games', ref => ref.orderBy('name'))
+      .valueChanges({ idField: 'id' })
   }
 
   public getGameById(id: string) {

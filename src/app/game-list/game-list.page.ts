@@ -13,16 +13,17 @@ export class GameListPage implements OnInit{
   public games: Game[]
   public gamesAux: Game[]
   
-  constructor(private gamesService: GamesService) {
-    this.getAllGamesFromFirebase()
-  }
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit() {
+    this.getAllGamesFromFirebase()
   }
 
   filterGame(event: any){
     let queryText = event.target.value;
-    this.getAllGames()
+
+    this.games = this.gamesAux
+    
     if (queryText && queryText.trim() != ''){
       this.games = this.games.filter((game) => {
         return (game.name.toLowerCase().indexOf(queryText.toLowerCase()) > -1);
@@ -30,30 +31,10 @@ export class GameListPage implements OnInit{
     }
   }
 
-  private getAllGames() {
-    this.games = this.gamesAux
-  }
-
-  private async getAllGamesFromFirebase() {
+  private getAllGamesFromFirebase() {
     this.gamesService.getAll().subscribe((gamesFirebase) => {
-      this.games = gamesFirebase.map((game) => {
-        const gameId = game.payload.doc.id
-        const gameData = game.payload.doc.data()
-
-        return {
-          id: gameId,
-          name: gameData['name'],
-          price: gameData['price'],
-          description: gameData['description'],
-          imgPortrait: gameData['imgPortrait'],
-          imgLandscape: gameData['imgLandscape'],
-          imgSquare: gameData['imgSquare'],
-          featured: gameData['featured'],
-          bestSeller: gameData['bestSeller'],
-          trending: gameData['trending']
-        }
-      })
-      this.gamesAux = this.games
+      this.games = gamesFirebase
+      this.gamesAux = gamesFirebase
     })
   }
 }
