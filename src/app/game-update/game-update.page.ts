@@ -21,6 +21,9 @@ export class GameUpdatePage implements OnInit {
     this.id = this.route.snapshot.params.id
 
     this.gamesService.getGameById(this.id).subscribe((game) => {
+      if (!game.name) {
+        this.router.navigateByUrl('/painel')
+      }
       this.game = game
     })
   }

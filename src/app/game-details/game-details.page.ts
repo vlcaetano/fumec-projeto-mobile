@@ -22,6 +22,9 @@ export class GameDetailsPage implements OnInit {
     const id: string = this.route.snapshot.params.id
 
     this.gamesService.getGameById(id).subscribe((game) => {
+      if (!game.name) {
+        this.router.navigateByUrl('/tabs/home')
+      }
       this.game = game
     })
   }
