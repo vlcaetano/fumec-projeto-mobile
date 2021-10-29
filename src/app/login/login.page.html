@@ -12,7 +12,7 @@
           type="text" 
           id="nomeUsuario"
           name="nomeUsuario"
-        >
+        [(ngModel)]="email">
       </div>
   
       <div class="input-block">
@@ -21,14 +21,14 @@
           type="password" 
           id="senha"
           name="senha"
-        >
+          [(ngModel)]="password">
       </div>
   
       <div class="buttons-login">
-        <a routerLink="/tabs/home">Iniciar sessão</a>
+        <a (click)="acessAccount()">Iniciar sessão</a>
         <a routerLink="/cadastro">Cadastre-se</a>
         <br><br>
-        <a routerLink="/painel">Painel</a>
+        <a (click)="acessAccount()">Painel</a>
       </div>
     </fieldset>
   

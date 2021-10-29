@@ -16,7 +16,7 @@
           type="text" 
           id="nomeCompleto" 
           name="nomeCompleto" 
-        >
+          [(ngModel)]="user.nome">
       </div>
   
       <div class="input-block">
@@ -25,7 +25,7 @@
           type="text" 
           id="nomeUsuario"
           name="nomeUsuario"
-        >
+          [(ngModel)]="user.nickName">
       </div>
   
       <div class="input-block">
@@ -34,7 +34,7 @@
           type="email" 
           id="email"
           name="email"
-        >
+          [(ngModel)]="user.email">
       </div>
   
       <div class="input-block">
@@ -43,10 +43,10 @@
           type="password" 
           id="senha"
           name="senha"
-        >
+        [(ngModel)]="user.senha">
       </div>
   
-      <button type="submit" routerLink="/tabs/home">Concluir</button>
+      <button (click)="register()"type="submit">Concluir</button>
     </fieldset>
   
   </form>
