@@ -12,10 +12,6 @@ const routes: Routes = [
     path: 'cadastro',
     loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
   },
-   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
   {
     path: 'detalhes/:id',
     loadChildren: () => import('./game-details/game-details.module').then( m => m.GameDetailsPageModule)

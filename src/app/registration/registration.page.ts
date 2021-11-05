@@ -13,7 +13,7 @@ import { UserService } from '../services/usuarios.service';
 export class RegistrationPage implements OnInit {
   public user: Usuario = {
     id: '',
-    nome:'',
+    nome: '',
     nickName: '',
     email: '',
     senha: '',
@@ -25,15 +25,14 @@ export class RegistrationPage implements OnInit {
   ngOnInit() {
   }
 
-  public register(){
-    this.auth.createAccount(this.user.email, this.user.senha).then((response)=>{
-
+  public register() {
+    this.auth.createAccount(this.user.email, this.user.senha).then((response) => {
 
       if (response.user.uid) {
-        this.user.uid = response.user.uid;
+        this.user.uid = response.user.uid
 
         this.userService.add(this.user).then((resultado) => {
-          this.route.navigate(['/tabs/login']);
+          this.route.navigateByUrl('/tabs/login')
         });
       }
 
