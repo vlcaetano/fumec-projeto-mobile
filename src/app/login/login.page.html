@@ -3,7 +3,7 @@
   <form>
     <img src="../../assets/images/coroa.svg" alt="Logo da Royal">
 
-    <fieldset>
+    <fieldset *ngIf="!loggedUser">
       <legend>Faça login para acessar o app</legend>
 
       <div class="input-block">
@@ -27,8 +27,14 @@
       <div class="buttons-login">
         <a (click)="acessAccount()">Iniciar sessão</a>
         <a routerLink="/cadastro">Cadastre-se</a>
-        <br><br>
-        <a (click)="acessAccount()">Painel</a>
+      </div>
+    </fieldset>
+
+    <fieldset *ngIf="loggedUser">
+      <legend>Olá, {{loggedUser.nickName}}!</legend>
+      <div class="buttons-login">
+        <a (click)="logout()">Fazer logout</a>
+        <a routerLink="/painel">Painel</a>
       </div>
     </fieldset>
   
