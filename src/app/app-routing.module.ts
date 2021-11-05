@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { AuthGuardService} from './guards/auth-guard.service';
+
 const routes: Routes = [
   {
     path: '',
@@ -28,7 +30,8 @@ const routes: Routes = [
   },
   {
     path: 'painel',
-    loadChildren: () => import('./panel/panel.module').then( m => m.PanelPageModule)
+    loadChildren: () => import('./panel/panel.module').then( m => m.PanelPageModule),
+    canActivate: [AuthGuardService]
   }
 ];
 @NgModule({

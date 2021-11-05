@@ -3,7 +3,7 @@
   <form>
     <img src="../../assets/images/coroa.svg" alt="Logo da Royal">
 
-    <fieldset>
+    <fieldset *ngIf="!loggedUser">
       <legend>Faça login para acessar o app</legend>
 
       <div class="input-block">
@@ -12,7 +12,7 @@
           type="text" 
           id="nomeUsuario"
           name="nomeUsuario"
-        >
+        [(ngModel)]="email">
       </div>
   
       <div class="input-block">
@@ -21,13 +21,19 @@
           type="password" 
           id="senha"
           name="senha"
-        >
+          [(ngModel)]="password">
       </div>
   
       <div class="buttons-login">
-        <a routerLink="/tabs/home">Iniciar sessão</a>
+        <a (click)="acessAccount()">Iniciar sessão</a>
         <a routerLink="/cadastro">Cadastre-se</a>
-        <br><br>
+      </div>
+    </fieldset>
+
+    <fieldset *ngIf="loggedUser">
+      <legend>Olá, {{loggedUser.nickName}}!</legend>
+      <div class="buttons-login">
+        <a (click)="logout()">Fazer logout</a>
         <a routerLink="/painel">Painel</a>
       </div>
     </fieldset>

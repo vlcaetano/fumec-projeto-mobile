@@ -29,6 +29,6 @@ export class GameUpdatePage implements OnInit {
   }
   
   public update(){
-    this.gamesService.updateGame(this.game, this.id).then(() => this.router.navigate(['/painel']))
+    this.gamesService.updateGame(this.game, this.id).then(() => this.router.navigateByUrl('/painel'))
   }
 }
