@@ -99,3 +99,9 @@ button:hover {
 ion-header {
   --ion-background-color: var(--ion-color-primary);
 }
+
+small.error-message {
+  color: var(--ion-color-danger);
+  margin-top: 0.7em;
+  font-size: 14px;
+}

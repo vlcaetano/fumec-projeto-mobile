@@ -8,45 +8,76 @@
     </ion-toolbar>
   </ion-header>
 
-  <form>
+  <form #form="ngForm" [formGroup]="userForm" (submit)="register()">
     <fieldset>
       <div class="input-block">
         <label for="nomeCompleto">Nome completo</label>
-        <input 
+        <input
+          placeholder="Digite seu nome completo"
           type="text" 
           id="nomeCompleto" 
-          name="nomeCompleto" 
-          [(ngModel)]="user.nome">
+          name="nomeCompleto"
+          formControlName="nomeCompleto">
+
+          <small class="error-message" *ngIf="(userForm.get('nomeCompleto')?.errors?.required ||
+                                               userForm.get('nomeCompleto')?.errors?.minlength || 
+                                               userForm.get('nomeCompleto')?.errors?.maxlength) && 
+                                               (userForm.get('nomeCompleto')?.touched || form.submitted)"> 
+            Digite seu nome completo(6 ate 150 caracteres)
+          </small>
       </div>
   
       <div class="input-block">
         <label for="nomeUsuario">Nome de usuário</label>
         <input 
+          placeholder="Escolha um nome de usuário"
           type="text" 
           id="nomeUsuario"
           name="nomeUsuario"
-          [(ngModel)]="user.nickName">
+          formControlName="nomeUsuario">
+
+          <small class="error-message" *ngIf="(userForm.get('nomeUsuario')?.errors?.required ||
+                                               userForm.get('nomeUsuario')?.errors?.minlength || 
+                                               userForm.get('nomeUsuario')?.errors?.maxlength) && 
+                                               (userForm.get('nomeUsuario')?.touched || form.submitted)"> 
+            Escolha um Nome de Usuario valido(3 a 30 caracteres)
+          </small>
       </div>
   
       <div class="input-block">
         <label for="email">Email</label>
         <input 
+          placeholder="Digite seu Email"
           type="email" 
           id="email"
           name="email"
-          [(ngModel)]="user.email">
+          formControlName="email">
+
+          <small class="error-message" *ngIf="(userForm.get('email')?.errors?.required ||
+                                               userForm.get('email')?.errors?.email) && 
+                                               (userForm.get('email')?.touched || form.submitted)">                                             
+            Informe o e-mail corretamente
+          </small>
       </div>
   
       <div class="input-block">
         <label for="senha">Senha</label>
         <input 
+          placeholder="Escolha uma Senha"
           type="password" 
           id="senha"
           name="senha"
-        [(ngModel)]="user.senha">
+          formControlName="senha">
+
+          <small class="error-message" *ngIf="(userForm.get('senha')?.errors?.required ||
+                                               userForm.get('senha')?.errors?.minlength) && 
+                                               (userForm.get('senha')?.touched || form.submitted)">                                             
+           Digite uma senha com no mínimo 6 caracteres
+          </small>
+
       </div>
   
-      <button (click)="register()"type="submit">Concluir</button>
+      <button type="submit" [disabled]="!form.valid">Concluir</button>
     </fieldset>
   
   </form>
