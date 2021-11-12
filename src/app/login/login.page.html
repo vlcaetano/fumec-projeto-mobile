@@ -3,7 +3,7 @@
   <form>
     <img src="../../assets/images/coroa.svg" alt="Logo da Royal">
 
-    <fieldset *ngIf="!isAuthenticated">
+    <fieldset *ngIf="!isAuthenticated()">
       <legend>Faça login para acessar o app</legend>
 
       <div class="input-block">
@@ -30,7 +30,7 @@
       </div>
     </fieldset>
 
-    <fieldset *ngIf="isAuthenticated">
+    <fieldset *ngIf="isAuthenticated()">
       <legend>Olá, {{loggedUser.nickName}}!</legend>
       <div class="buttons-login">
         <ion-button (click)="logout()"> Fazer logout </ion-button>

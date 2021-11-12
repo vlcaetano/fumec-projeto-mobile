@@ -15,7 +15,6 @@ export class LoginPage implements OnInit {
   public email: string
   public password: string
   public loggedUser: Usuario
-  public isAuthenticated: boolean
 
   private sub: Subscription
 
@@ -28,13 +27,11 @@ export class LoginPage implements OnInit {
     this.auth.logIn(this.email, this.password).then((response) => {
 
       if (response.user.uid) {
-        this.auth.setAuthenticated(true)
-
         this.sub = this.usuarioService.getByUID(response.user.uid).subscribe((users: Usuario[]) => {
           const [user] = users
           this.loggedUser = user
-
-          this.isAuthenticated = true
+          this.auth.setAuthenticated(true)
+          
           this.route.navigateByUrl('/tabs/home');
         })
       }
@@ -45,9 +42,12 @@ export class LoginPage implements OnInit {
     this.auth.logOut().then(() => {
       this.sub.unsubscribe()
       this.auth.setAuthenticated(false)
-      this.isAuthenticated = false
       this.email = ''
       this.password = ''
     })
+  }
+
+  public isAuthenticated(): boolean {
+    return this.auth.isAuthenticated()
   }
 }
