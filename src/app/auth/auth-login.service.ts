@@ -17,6 +17,10 @@ export class AuthLoginService {
     return this.fireAuth.signInWithEmailAndPassword(email, password)
   }
 
+  logOut() {
+    return this.fireAuth.signOut()
+  }
+
   public isAuthenticated(): boolean {
     return this.authenticated
   }

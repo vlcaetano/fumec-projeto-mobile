@@ -3,7 +3,7 @@
   <form>
     <img src="../../assets/images/coroa.svg" alt="Logo da Royal">
 
-    <fieldset *ngIf="!loggedUser">
+    <fieldset *ngIf="!isAuthenticated">
       <legend>Faça login para acessar o app</legend>
 
       <div class="input-block">
@@ -25,16 +25,16 @@
       </div>
   
       <div class="buttons-login">
-        <a (click)="acessAccount()">Iniciar sessão</a>
-        <a routerLink="/cadastro">Cadastre-se</a>
+        <ion-button (click)="acessAccount()"> Iniciar sessão </ion-button>
+        <ion-button routerLink="/cadastro"> Cadastre-se </ion-button>
       </div>
     </fieldset>
 
-    <fieldset *ngIf="loggedUser">
+    <fieldset *ngIf="isAuthenticated">
       <legend>Olá, {{loggedUser.nickName}}!</legend>
       <div class="buttons-login">
-        <a (click)="logout()">Fazer logout</a>
-        <a routerLink="/painel">Painel</a>
+        <ion-button (click)="logout()"> Fazer logout </ion-button>
+        <ion-button routerLink="/painel"> Painel </ion-button>
       </div>
     </fieldset>
   

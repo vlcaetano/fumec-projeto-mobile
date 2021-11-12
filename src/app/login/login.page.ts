@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
 
 import { AuthLoginService } from './../auth/auth-login.service';
@@ -14,11 +15,13 @@ export class LoginPage implements OnInit {
   public email: string
   public password: string
   public loggedUser: Usuario
+  public isAuthenticated: boolean
+
+  private sub: Subscription
 
   constructor(private auth: AuthLoginService, private route: Router, private usuarioService: UserService) { }
 
   ngOnInit() {
-    this.loggedUser = null
   }
 
   public acessAccount() {
@@ -27,10 +30,11 @@ export class LoginPage implements OnInit {
       if (response.user.uid) {
         this.auth.setAuthenticated(true)
 
-        this.usuarioService.getByUID(response.user.uid).subscribe((users: Usuario[]) => {
+        this.sub = this.usuarioService.getByUID(response.user.uid).subscribe((users: Usuario[]) => {
           const [user] = users
           this.loggedUser = user
 
+          this.isAuthenticated = true
           this.route.navigateByUrl('/tabs/home');
         })
       }
@@ -38,6 +42,12 @@ export class LoginPage implements OnInit {
   }
 
   public logout() {
-    //TODO
+    this.auth.logOut().then(() => {
+      this.sub.unsubscribe()
+      this.auth.setAuthenticated(false)
+      this.isAuthenticated = false
+      this.email = ''
+      this.password = ''
+    })
   }
 }
