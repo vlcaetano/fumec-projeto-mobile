@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
 
-  <form>
+  <form #form="ngForm" [formGroup]="userForm" (submit)="acessAccount()">
     <img src="../../assets/images/coroa.svg" alt="Logo da Royal">
 
     <fieldset *ngIf="!isAuthenticated()">
@@ -12,7 +12,14 @@
           type="text" 
           id="email"
           name="email"
-        [(ngModel)]="email">
+          formControlName="email">
+
+          <small class="error-message" *ngIf="(userForm.get('email')?.errors?.required ||
+                                               userForm.get('email')?.errors?.email) && 
+                                               (userForm.get('email')?.touched || form.submitted)">                                             
+            Informe o e-mail corretamente
+          </small>
+
       </div>
   
       <div class="input-block">
@@ -21,11 +28,17 @@
           type="password" 
           id="senha"
           name="senha"
-          [(ngModel)]="password">
+          formControlName="senha">
+
+          <small class="error-message" *ngIf="(userForm.get('senha')?.errors?.required ||
+                                               userForm.get('senha')?.errors?.minlength) && 
+                                               (userForm.get('senha')?.touched || form.submitted)">                                             
+            Digite uma senha com no mínimo 6 caracteres
+          </small>
       </div>
   
       <div class="buttons-login">
-        <ion-button (click)="acessAccount()"> Iniciar sessão </ion-button>
+        <ion-button type="submit"> Iniciar sessão </ion-button>
         <ion-button routerLink="/cadastro"> Cadastre-se </ion-button>
       </div>
     </fieldset>
