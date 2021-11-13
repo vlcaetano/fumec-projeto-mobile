@@ -83,6 +83,12 @@ img {
   margin: 10px;
 }
 
+small.error-message {
+  color: var(--ion-color-danger);
+  margin-top: 0.7em;
+  font-size: 14px;
+}
+
 ion-button {
   font-family: 'Archivo', sans-serif;
   font-size: 1.2em;

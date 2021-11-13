@@ -57,19 +57,14 @@ export class RegistrationPage implements OnInit {
       };
     
       this.auth.createAccount(user.email, user.senha).then((response) => {
-
-        if (response.user.uid) {
           user.uid = response.user.uid
   
           this.userService.add(user).then((resultado) => {
             this.route.navigateByUrl('/tabs/login')
           });
         }
-  
-      });
-    } else{
-      console.log(" ta ok n");
-    }
+      );
+    } 
    
   }
 }
