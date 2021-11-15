@@ -12,7 +12,7 @@ import { UserService } from '../services/usuarios.service';
 })
 export class RegistrationPage implements OnInit {
 
-  public userForm: FormGroup;
+  public userForm: FormGroup
 
   constructor(private formBuilder: FormBuilder,
               private auth: AuthLoginService, 
@@ -39,11 +39,11 @@ export class RegistrationPage implements OnInit {
                   Validators.required, 
                   Validators.minLength(6)])
               ]
-    });
+    })
   }
 
   public register() {
-    let user: Usuario = null;
+    let user: Usuario = null
   
     if(this.userForm.valid){
 
@@ -54,16 +54,16 @@ export class RegistrationPage implements OnInit {
         email: this.userForm.value.email,
         senha: this.userForm.value.senha,
         uid: ''
-      };
+      }
     
       this.auth.createAccount(user.email, user.senha).then((response) => {
           user.uid = response.user.uid
   
           this.userService.add(user).then((resultado) => {
             this.route.navigateByUrl('/tabs/login')
-          });
+          })
         }
-      );
+      )
     } 
    
   }

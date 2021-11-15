@@ -16,7 +16,8 @@
 
           <small class="error-message" *ngIf="(userForm.get('email')?.errors?.required ||
                                                userForm.get('email')?.errors?.email) && 
-                                               (userForm.get('email')?.touched || form.submitted)">                                             
+                                               (userForm.get('email')?.touched || form.submitted) &&
+                                               showErrorMessage">                                             
             Informe o e-mail corretamente
           </small>
 
@@ -32,8 +33,9 @@
 
           <small class="error-message" *ngIf="(userForm.get('senha')?.errors?.required ||
                                                userForm.get('senha')?.errors?.minlength) && 
-                                               (userForm.get('senha')?.touched || form.submitted)">                                             
-            Digite uma senha com no mínimo 6 caracteres
+                                               (userForm.get('senha')?.touched || form.submitted) &&
+                                               showErrorMessage">                                             
+            Digite uma senha 
           </small>
       </div>
   
