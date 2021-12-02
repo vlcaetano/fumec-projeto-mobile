@@ -1,18 +1,26 @@
 <ion-content [fullscreen]="true">
 
-  <form>
+  <form #form="ngForm" [formGroup]="userForm" (submit)="acessAccount()">
     <img src="../../assets/images/coroa.svg" alt="Logo da Royal">
 
-    <fieldset *ngIf="!loggedUser">
+    <fieldset *ngIf="!isAuthenticated()">
       <legend>Faça login para acessar o app</legend>
 
       <div class="input-block">
-        <label for="nomeUsuario">Nome de usuário</label>
+        <label for="email">Email</label>
         <input 
           type="text" 
-          id="nomeUsuario"
-          name="nomeUsuario"
-        [(ngModel)]="email">
+          id="email"
+          name="email"
+          formControlName="email">
+
+          <small class="error-message" *ngIf="(userForm.get('email')?.errors?.required ||
+                                               userForm.get('email')?.errors?.email) && 
+                                               (userForm.get('email')?.touched || form.submitted) &&
+                                               showErrorMessage">                                             
+            Informe o e-mail corretamente
+          </small>
+
       </div>
   
       <div class="input-block">
@@ -21,20 +29,27 @@
           type="password" 
           id="senha"
           name="senha"
-          [(ngModel)]="password">
+          formControlName="senha">
+
+          <small class="error-message" *ngIf="(userForm.get('senha')?.errors?.required ||
+                                               userForm.get('senha')?.errors?.minlength) && 
+                                               (userForm.get('senha')?.touched || form.submitted) &&
+                                               showErrorMessage">                                             
+            Digite uma senha 
+          </small>
       </div>
   
       <div class="buttons-login">
-        <a (click)="acessAccount()">Iniciar sessão</a>
-        <a routerLink="/cadastro">Cadastre-se</a>
+        <ion-button type="submit"> Iniciar sessão </ion-button>
+        <ion-button routerLink="/cadastro"> Cadastre-se </ion-button>
       </div>
     </fieldset>
 
-    <fieldset *ngIf="loggedUser">
+    <fieldset *ngIf="isAuthenticated()">
       <legend>Olá, {{loggedUser.nickName}}!</legend>
       <div class="buttons-login">
-        <a (click)="logout()">Fazer logout</a>
-        <a routerLink="/painel">Painel</a>
+        <ion-button (click)="logout()"> Fazer logout </ion-button>
+        <ion-button routerLink="/painel"> Painel </ion-button>
       </div>
     </fieldset>
   

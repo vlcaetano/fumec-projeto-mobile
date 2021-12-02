@@ -8,56 +8,85 @@
     </ion-toolbar>
   </ion-header>
 
-  <form>
+  <form #form="ngForm" [formGroup]="gameForm" (submit)="update()">
     <fieldset>
       <div class="input-block">
-        <label position="floating">Nome</label>
-        <input type="text" name="name" [(ngModel)]="game.name">
+        <label position="floating" for="name">Nome</label>
+        <input type="text" name="name" formControlName="name">
+        <small class="error-message" *ngIf="(gameForm.get('name')?.errors?.required ||
+                                               gameForm.get('name')?.errors?.minlength || 
+                                               gameForm.get('name')?.errors?.maxlength) && 
+                                               (gameForm.get('name')?.touched || form.submitted)"> 
+            Insira o nome do Jogo(1 ate 150 caracteres)
+        </small>
       </div>
 
       <div class="input-block">
-        <label position="floating">Preço</label>
-        <input type="number" name="price" [(ngModel)]="game.price">
+        <label position="floating" for="price">Preço</label>
+        <input type="number" name="price" formControlName="price">
+        <small class="error-message" *ngIf="(gameForm.get('price')?.errors?.required ||
+                                            gameForm.get('price')?.errors?.min) && 
+                                            (gameForm.get('price')?.touched || form.submitted)"> 
+            Insira o preço do jogo(Minimo R$ 0,00)
+        </small>
       </div>
 
       <div class="input-block">
-        <label position="floating">Link da Imagem Retrato</label>
-        <input type="text" name="imgPortrait" [(ngModel)]="game.imgPortrait">
+        <label position="floating" for="imgPortrait">Link da Imagem Retrato</label>
+        <input type="text" name="imgPortrait" formControlName="imgPortrait">
+        <small class="error-message" *ngIf="(gameForm.get('imgPortrait')?.errors?.required) && 
+                                            (gameForm.get('imgPortrait')?.touched || form.submitted)"> 
+            Insira o link da imagem Retrato do jogo
+        </small>
       </div>
 
       <div class="input-block">
-        <label position="floating">Link da Imagem Paisagem </label>
-        <input type="text" name="imgLandscape" [(ngModel)]="game.imgLandscape">
+        <label position="floating" for="imgLandscape">Link da Imagem Paisagem </label>
+        <input type="text" name="imgLandscape" formControlName="imgLandscape">
+        <small class="error-message" *ngIf="(gameForm.get('imgLandscape')?.errors?.required) && 
+                                            (gameForm.get('imgLandscape')?.touched || form.submitted)"> 
+            Insira o link da imagem Paisagem do jogo
+        </small>
       </div>
 
       <div class="input-block">
-        <label position="floating">Link da Imagem Quadrada </label>
-        <input type="text" name="imgSquare" [(ngModel)]="game.imgSquare">
+        <label position="floating" for="imgSquare">Link da Imagem Quadrada </label>
+        <input type="text" name="imgSquare" formControlName="imgSquare">
+        <small class="error-message" *ngIf="(gameForm.get('imgSquare')?.errors?.required) && 
+                                            (gameForm.get('imgSquare')?.touched || form.submitted)"> 
+            Insira o link da imagem Quadrada do jogo
+        </small>
       </div>
 
       <div class="input-block">
-        <label position="stacked">Descrição</label>
-        <textarea name="description" [(ngModel)]="game.description"></textarea>
+        <label position="stacked" for="description">Descrição</label>
+        <textarea name="description" formControlName="description"></textarea>
+        <small class="error-message" *ngIf="(gameForm.get('description')?.errors?.required ||
+                                               gameForm.get('description')?.errors?.minlength || 
+                                               gameForm.get('description')?.errors?.maxlength) && 
+                                               (gameForm.get('description')?.touched || form.submitted)"> 
+            Insira uma descrição de 1 a 500 caracteres
+        </small>
       </div>
 
       <div class="checkbox-block">
-        <ion-checkbox [(ngModel)]="game.featured" name="featured"></ion-checkbox>
+        <ion-checkbox formControlName="featured" name="featured"></ion-checkbox>
         <ion-label>Destaques</ion-label>
       </div>
 
       <div class="checkbox-block">
-        <ion-checkbox [(ngModel)]="game.bestSeller" name="bestSeller"></ion-checkbox>
+        <ion-checkbox formControlName="bestSeller" name="bestSeller"></ion-checkbox>
         <ion-label>Mais Vendidos</ion-label>
       </div>
 
       <div class="checkbox-block">
-        <ion-checkbox [(ngModel)]="game.trending" name="trending"></ion-checkbox>
+        <ion-checkbox formControlName="trending" name="trending"></ion-checkbox>
         <ion-label>Novidades</ion-label>
       </div>
       
       <ion-row>
         <ion-col size="6">
-          <ion-button (click)="update()" expand="block" color="success">
+          <ion-button type="submit" expand="block" color="success">
             Salvar
           </ion-button>
         </ion-col>

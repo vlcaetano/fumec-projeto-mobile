@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from './../models/usuario.model';
 import { AuthLoginService } from './../auth/auth-login.service';
 import { UserService } from '../services/usuarios.service';
@@ -11,31 +11,60 @@ import { UserService } from '../services/usuarios.service';
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-  public user: Usuario = {
-    id: '',
-    nome: '',
-    nickName: '',
-    email: '',
-    senha: '',
-    uid: ''
-  };
 
-  constructor(private auth: AuthLoginService, private userService: UserService, private route: Router) { }
+  public userForm: FormGroup
+
+  constructor(private formBuilder: FormBuilder,
+              private auth: AuthLoginService, 
+              private userService: UserService, 
+              private route: Router) { }
 
   ngOnInit() {
+    this.userForm = this.formBuilder.group({
+      nomeCompleto: ['',Validators.compose([
+                        Validators.required, 
+                        Validators.minLength(6),
+                        Validators.maxLength(150)])
+                      ],
+      nomeUsuario: ['', Validators.compose([
+                        Validators.required, 
+                        Validators.minLength(3),
+                        Validators.maxLength(30)])
+                    ],
+      email: ['', Validators.compose([
+                  Validators.required, 
+                  Validators.email])
+              ],
+      senha: ['', Validators.compose([
+                  Validators.required, 
+                  Validators.minLength(6)])
+              ]
+    })
   }
 
   public register() {
-    this.auth.createAccount(this.user.email, this.user.senha).then((response) => {
+    let user: Usuario = null
+  
+    if(this.userForm.valid){
 
-      if (response.user.uid) {
-        this.user.uid = response.user.uid
-
-        this.userService.add(this.user).then((resultado) => {
-          this.route.navigateByUrl('/tabs/login')
-        });
+      user = {
+        id: '',
+        nome: this.userForm.value.nomeCompleto,
+        nickName: this.userForm.value.nomeUsuario,
+        email: this.userForm.value.email,
+        senha: this.userForm.value.senha,
+        uid: ''
       }
-
-    });
+    
+      this.auth.createAccount(user.email, user.senha).then((response) => {
+          user.uid = response.user.uid
+  
+          this.userService.add(user).then((resultado) => {
+            this.route.navigateByUrl('/tabs/login')
+          })
+        }
+      )
+    } 
+   
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Game } from '../models/game.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GamesService } from '../services/games.service';
 
 @Component({
@@ -9,26 +9,62 @@ import { GamesService } from '../services/games.service';
   styleUrls: ['./game-update.page.scss'],
 })
 export class GameUpdatePage implements OnInit {
-  
-  public game: Game = new Game()
-  private id: string;
+  public gameForm: FormGroup
+  private id: string
 
-  constructor(private gamesService: GamesService, 
-              private route: ActivatedRoute, 
-              private router: Router) { }
+  constructor(private formBuilder: FormBuilder,
+    private gamesService: GamesService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params.id
+    this.gameForm = this.formBuilder.group({
+      name: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(1),
+        Validators.maxLength(150)])
+      ],
+      price: ['0', Validators.compose([
+        Validators.required,
+        Validators.min(0)])
+      ],
+      imgPortrait: ['', Validators.required],
 
+      imgLandscape: ['', Validators.required],
+
+      imgSquare: ['', Validators.required],
+
+      description: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(1),
+        Validators.maxLength(500)])
+      ],
+      featured: [0],
+      bestSeller: [0],
+      trending: [0]
+    })
+
+
+    this.id = this.route.snapshot.params.id
     this.gamesService.getGameById(this.id).subscribe((game) => {
       if (!game.name) {
         this.router.navigateByUrl('/painel')
       }
-      this.game = game
+      this.gameForm.setValue({
+        name: game.name,
+        price: game.price,
+        imgPortrait: game.imgPortrait,
+        imgLandscape: game.imgLandscape,
+        imgSquare: game.imgSquare,
+        description: game.description,
+        featured: game.featured,
+        bestSeller: game.bestSeller,
+        trending: game.trending
+      })
     })
   }
-  
-  public update(){
-    this.gamesService.updateGame(this.game, this.id).then(() => this.router.navigateByUrl('/painel'))
+
+  public update() {
+    this.gamesService.updateGame(this.gameForm.value, this.id).then(() => this.router.navigateByUrl('/painel'))
   }
 }
