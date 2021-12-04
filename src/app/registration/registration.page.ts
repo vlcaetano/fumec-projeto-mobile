@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from './../models/usuario.model';
 import { AuthLoginService } from './../auth/auth-login.service';
 import { UserService } from '../services/usuarios.service';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-registration',
@@ -17,6 +18,7 @@ export class RegistrationPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private auth: AuthLoginService, 
               private userService: UserService, 
+              private photoService: PhotoService,
               private route: Router) { }
 
   ngOnInit() {
@@ -40,6 +42,10 @@ export class RegistrationPage implements OnInit {
                   Validators.minLength(6)])
               ]
     })
+  }
+
+  public activateCamera() {
+    this.photoService.takePhoto()
   }
 
   public register() {
