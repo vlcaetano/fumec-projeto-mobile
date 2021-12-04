@@ -11,9 +11,7 @@
   <form #form="ngForm" [formGroup]="userForm" (submit)="register()">
     <fieldset>
       <div class="photo-block">
-        <ion-img src="./../assets/images/user.png">
-
-        </ion-img>
+        <ion-img [src]="photoService.photo?.webviewpath"></ion-img>
         <ion-button (click)="activateCamera()" color="primary">
           <ion-icon slot="icon-only" name="camera"></ion-icon>
         </ion-button>

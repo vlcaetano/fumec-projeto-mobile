@@ -59,18 +59,23 @@ export class RegistrationPage implements OnInit {
         nickName: this.userForm.value.nomeUsuario,
         email: this.userForm.value.email,
         senha: this.userForm.value.senha,
-        uid: ''
+        uid: '',
+        url: ''
       }
     
       this.auth.createAccount(user.email, user.senha).then((response) => {
-          user.uid = response.user.uid
-  
-          this.userService.add(user).then((resultado) => {
-            this.route.navigateByUrl('/tabs/login')
+        user.uid = response.user.uid
+
+        this.photoService.upload(user.uid).then((fileRef) => {
+          fileRef.getDownloadURL().subscribe((url) => {
+            user.url = url;
+
+            this.userService.add(user).then(() => {
+              this.route.navigateByUrl('/tabs/login')
+            })
           })
-        }
-      )
+        })
+      })
     } 
-   
   }
 }

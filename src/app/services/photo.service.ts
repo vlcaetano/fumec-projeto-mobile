@@ -3,7 +3,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage'
 
 import { Platform } from '@ionic/angular'
 
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera'
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera'
 import { Filesystem } from '@capacitor/filesystem'
 
 import { CapacitorPhoto } from '../models/capacitorPhoto.model';
@@ -26,7 +26,7 @@ export class PhotoService {
     const image = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 90
+      quality: 100
     })
 
     this.photo = {
@@ -37,7 +37,7 @@ export class PhotoService {
   }
 
   public async upload(name: string) {
-    const namePhoto = name
+    const photoName = name
     let file = null
 
     if (this.plataform.is('hybrid')) {
@@ -49,20 +49,17 @@ export class PhotoService {
 
       file = `data:image/jpeg;base64,${readFile.data}`
     } else {
-        file = this.photo.webviewpath
+      file = this.photo.webviewpath
     }
-
-    // const file =  this.photo.webviewpath;
 
     const response = await fetch(file)
     const blob = await response.blob()
     const formData = new FormData()
 
-    formData.append('file', blob, namePhoto)
-
+    formData.append('file', blob, photoName)
 
     const foto = formData.get('file')
-    const filepath = 'userPhotos/' + namePhoto
+    const filepath = `userPhotos/${photoName}`
 
     const fileRef = this.fireStorage.ref(filepath)
 
