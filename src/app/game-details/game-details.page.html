@@ -15,10 +15,21 @@
   
     <div class="texto" [innerHTML]="game.description"></div>
   
-    <h3>{{game.price | currency:'BRL'}}</h3>
+    <ng-container *ngIf="isAuthenticated() && gameNotPurchased()">
+      <h3>{{game.price | currency:'BRL'}}</h3>
+  
+      <div class="botoes">
+        <a (click)="buyGame()">Comprar</a>
+      </div>
+    </ng-container>
 
-    <div class="botoes">
-      <a (click)="comprar()">Comprar</a>
-    </div>
+    <ng-container *ngIf="isAuthenticated() && !gameNotPurchased()">
+      <h3>Na biblioteca</h3>
+    </ng-container>
+
+    <ng-container *ngIf="!isAuthenticated()">
+      <br>
+      <h3>Faça login para comprar o jogo!</h3>
+    </ng-container>
   </div>
 </ion-content>

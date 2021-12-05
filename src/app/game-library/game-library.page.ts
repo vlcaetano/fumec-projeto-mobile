@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Game } from '../models/game.model';
+import { Component, DoCheck } from '@angular/core';
+import { AuthLoginService } from '../auth/auth-login.service';
+import { UserGame } from '../models/userGame.model';
 import { GamesService } from '../services/games.service';
 
 @Component({
@@ -7,19 +8,27 @@ import { GamesService } from '../services/games.service';
   templateUrl: 'game-library.page.html',
   styleUrls: ['game-library.page.scss']
 })
-export class GameLibraryPage {
+export class GameLibraryPage implements DoCheck {
 
-  public games: Game[]
+  public games: UserGame[]
   public numOfGames: number
   
-  constructor(private gamesService: GamesService) {
-    this.getAllGamesFromFirebase()
+  constructor(private gamesService: GamesService, private auth: AuthLoginService) {
+    this.getUserGames()
   }
 
-  private getAllGamesFromFirebase() {
-    this.gamesService.getAll().subscribe((gamesFirebase) => {
-      this.games = gamesFirebase
+  ngDoCheck(): void {
+    this.getUserGames()
+  }
+
+  private getUserGames() {
+    if (this.isAuthenticated()) {
+      this.games = this.gamesService.getUserGames()
       this.numOfGames = this.games.length
-    })
+    }
+  }
+
+  public isAuthenticated(): boolean {
+    return this.auth.isAuthenticated()
   }
 }

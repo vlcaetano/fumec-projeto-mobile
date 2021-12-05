@@ -60,7 +60,8 @@ export class RegistrationPage implements OnInit {
         email: this.userForm.value.email,
         senha: this.userForm.value.senha,
         uid: '',
-        url: ''
+        url: '',
+        userGames: []
       }
     
       this.auth.createAccount(user.email, user.senha).then((response) => {

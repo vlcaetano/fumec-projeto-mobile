@@ -19,7 +19,10 @@ export class LoginPage implements OnInit {
 
   private sub: Subscription
 
-  constructor(private auth: AuthLoginService, private route: Router, private usuarioService: UserService, private formBuilder: FormBuilder) { }
+  constructor(private auth: AuthLoginService, 
+              private route: Router, 
+              private userService: UserService, 
+              private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.userForm = this.formBuilder.group({
@@ -46,9 +49,10 @@ export class LoginPage implements OnInit {
     this.auth.logIn(user.email, user.senha).then((response) => {
 
       if (response.user.uid) {
-        this.sub = this.usuarioService.getByUID(response.user.uid).subscribe((users: Usuario[]) => {
+        this.sub = this.userService.getByUID(response.user.uid).subscribe((users: Usuario[]) => {
           const [user] = users
           this.loggedUser = user
+          this.userService.setLoggedUser(user)
           this.auth.setAuthenticated(true)
 
           this.route.navigateByUrl('/tabs/home')
@@ -62,6 +66,7 @@ export class LoginPage implements OnInit {
     this.sub.unsubscribe()
     this.auth.logOut().then(() => {
       this.auth.setAuthenticated(false)
+      this.userService.setLoggedUser(null)
       this.userForm.setValue({
         email:'',
         senha:''
