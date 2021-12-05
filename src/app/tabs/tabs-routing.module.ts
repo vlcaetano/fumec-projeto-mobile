@@ -16,10 +16,6 @@ const routes: Routes = [
         loadChildren: () => import('../game-library/game-library.module').then(m => m.GameLibraryPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
-      {
         path: 'jogos',
         loadChildren: () => import('../game-list/game-list.module').then( m => m.GameListPageModule)
       },
