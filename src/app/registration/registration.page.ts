@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from './../models/usuario.model';
 import { AuthLoginService } from './../auth/auth-login.service';
 import { UserService } from '../services/usuarios.service';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-registration',
@@ -17,6 +18,7 @@ export class RegistrationPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private auth: AuthLoginService, 
               private userService: UserService, 
+              private photoService: PhotoService,
               private route: Router) { }
 
   ngOnInit() {
@@ -42,6 +44,10 @@ export class RegistrationPage implements OnInit {
     })
   }
 
+  public activateCamera() {
+    this.photoService.takePhoto()
+  }
+
   public register() {
     let user: Usuario = null
   
@@ -53,18 +59,23 @@ export class RegistrationPage implements OnInit {
         nickName: this.userForm.value.nomeUsuario,
         email: this.userForm.value.email,
         senha: this.userForm.value.senha,
-        uid: ''
+        uid: '',
+        url: ''
       }
     
       this.auth.createAccount(user.email, user.senha).then((response) => {
-          user.uid = response.user.uid
-  
-          this.userService.add(user).then((resultado) => {
-            this.route.navigateByUrl('/tabs/login')
+        user.uid = response.user.uid
+
+        this.photoService.upload(user.uid).then((fileRef) => {
+          fileRef.getDownloadURL().subscribe((url) => {
+            user.url = url;
+
+            this.userService.add(user).then(() => {
+              this.route.navigateByUrl('/tabs/login')
+            })
           })
-        }
-      )
+        })
+      })
     } 
-   
   }
 }

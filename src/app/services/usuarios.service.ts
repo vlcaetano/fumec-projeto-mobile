@@ -14,12 +14,12 @@ export class UserService {
 
   public add(user: Usuario) {
     delete user.id
-    return this.firestore.collection<Usuario>('usuarios').add(user)
+    return this.firestore.collection<Usuario>('users').add(user)
   }
 
   public getByUID(uidParam: string): Observable<Usuario[]> {
     return this.firestore
-      .collection<Usuario>('usuarios', ref => ref.where('uid', '==', uidParam))
+      .collection<Usuario>('users', ref => ref.where('uid', '==', uidParam))
       .valueChanges({ idField: 'id' })
   }
 }

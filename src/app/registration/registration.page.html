@@ -10,6 +10,13 @@
 
   <form #form="ngForm" [formGroup]="userForm" (submit)="register()">
     <fieldset>
+      <div class="photo-block">
+        <ion-img [src]="photoService.photo?.webviewpath"></ion-img>
+        <ion-button (click)="activateCamera()" color="primary">
+          <ion-icon slot="icon-only" name="camera"></ion-icon>
+        </ion-button>
+      </div>
+
       <div class="input-block">
         <label for="nomeCompleto">Nome completo</label>
         <input

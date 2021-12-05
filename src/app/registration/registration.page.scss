@@ -71,6 +71,21 @@ input {
   margin-bottom: 15px;
 }
 
+ion-img {
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.photo-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  align-items: center;
+}
+
 ion-header {
   --ion-background-color: var(--ion-color-primary);
 }

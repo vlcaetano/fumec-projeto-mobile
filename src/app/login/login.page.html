@@ -46,6 +46,9 @@
     </fieldset>
 
     <fieldset *ngIf="isAuthenticated()">
+      <div class="photo-block">
+        <ion-img [src]="loggedUser.url"></ion-img>
+      </div>
       <legend>Olá, {{loggedUser.nickName}}!</legend>
       <div class="buttons-login">
         <ion-button (click)="logout()"> Fazer logout </ion-button>
