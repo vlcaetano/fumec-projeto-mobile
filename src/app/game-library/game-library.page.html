@@ -1,5 +1,5 @@
 <ion-content>
-  <div class="flex-container">
+  <div class="flex-container" *ngIf="isAuthenticated()">
     <h1>Todos os {{numOfGames}} jogos</h1>
     <ion-row>
       <ion-col size="6" *ngFor="let game of games">
@@ -11,5 +11,9 @@
         </div>
       </ion-col>
     </ion-row>
+  </div>
+
+  <div class="flex-container nao-logado" *ngIf="!isAuthenticated()">
+    <h1>Faça login para ver seus jogos</h1>
   </div>
 </ion-content>
